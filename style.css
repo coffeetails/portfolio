@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.textBox, .iconBox {
+    border: 1px solid blueviolet;
+    margin: .5rem;
+    padding: .5rem;
+}
+.textBox {
+    width: 15rem;
+    height: 9rem;
+}
+.iconBox {
+    width: 4rem;
+    height: 4rem;
+}
+
+#fadein {
+    opacity: 1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    background-color: #fff;
+    z-index: 999;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation: fadeinall 1s normal both;
+    animation: fadeinall 1s normal both;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s; 
+}
+
+@keyframes fadeinall {
+    0% {
+        opacity: 1; }
+    97% {
+        opacity: 0; }
+    98% {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0); }
+    99% {
+        opacity: 0;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%); }
+    100% {
+        opacity: 0;
+        z-index: -1; 
+    } 
+}
