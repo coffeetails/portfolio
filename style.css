@@ -24,13 +24,14 @@
     color: var(--light);
 }
 body {
-    /* background-color: var(--dark); */
     background-color: var(--dark);
-    opacity: 0.8;
-    background-size: 1.5rem 1.5rem;
-    background-image:  repeating-linear-gradient(to right, var(--gray), var(--gray) 1px, var(--dark) 1px, var(--dark));
-    
     min-height: 100vh;
+    
+    background: url("background.svg");
+    background-size: cover;
+
+    /* background-size: 1.5rem 1.5rem; */
+    /* background-image:  repeating-linear-gradient(to right, var(--gray), var(--gray) 1px, var(--dark) 1px, var(--dark)); */
 
     display: flex;
     align-items: center;
@@ -39,9 +40,11 @@ body {
 
 .wrapper {
     margin: 2rem;
-    display: grid;
+    /* display: grid;
     justify-content: center;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, auto); */
+    display:flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
 }
 
@@ -94,6 +97,22 @@ body {
     background-color: var(--dark);
     box-shadow: 0 0 3px 5px var(--dark);
 }
+
+
+
+/* @media screen and (max-width: 580px) {
+    .wrapper {
+        margin: 2rem;
+        display: grid;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .textBox {
+        grid-column: span 4;
+        grid-row: span 2;
+    }
+} */
+
 
 
 #fadein {
