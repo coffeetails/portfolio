@@ -10,6 +10,8 @@
     --shadow: inset 5.00px 8.66px 13.66px -1.71px rgba(0, 0, 0, 0.15),
     inset -7.50px -12.99px 13.66px -1.71px rgba(0, 0, 0, 0.3),
     15.00px 25.98px 10.25px -5.12px rgba(0, 0, 0, 0.6);
+    --shadow-invert: -5px -5px 10px 0px rgba(0, 0, 0, 0.6),
+    5px 5px 10px 0px rgba(0, 0, 0, 0.3);
 }
 .theme-light {
     --border-color: #9797972c;
@@ -20,6 +22,8 @@
     --shadow: 35px 35px 68px 0px rgba(138, 138, 138, 0.5), 
     inset -6px -6px 16px 0px rgba(138, 138, 138, 0.6), 
     inset 0px 11px 28px 0px rgb(255, 255, 255);
+    --shadow-invert: -5px -5px 10px 0px red,
+    5px 5px 10px 0px blue;
 }
 
 * {
@@ -30,6 +34,7 @@
     --iconSize: 5rem;
     --iconBoxSize: 6rem;
     --textBoxSize: 13.5rem;
+    --radius: 1rem;
 
     font-weight: 300;
     /* font-family: 'Exo 2', sans-serif; */
@@ -39,11 +44,13 @@
     color: var(--font-color);
 }
 body {
+    padding-top: 10rem;
     background-color: var(--background-color);
     min-height: 100vh;
     background-size: cover;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -51,15 +58,20 @@ body {
 button {
     background-color: var(--background-colorish);
     color: var(--font-color);
-    border-radius: 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
 }
 
 #themeButton {
-    position: absolute;
+    position: fixed;
     top: 1rem;
     right: 1rem;
-    padding: .25rem 1rem;
-    border: 1rem;
+    height: 4rem;
+    width: 4rem;
+    border: 0;
+}
+#themeButton > img {
+    height: 4rem;
 }
 
 .wrapper {
@@ -70,47 +82,24 @@ button {
 }
 
 .clayit {
-    border-radius: 1rem;
+    border-radius: var(--radius);
     border: 1px solid var(--border-color);
     background-color: var(--background-colorish);
     backdrop-filter: blur(50px);
     box-shadow: var(--shadow);
 }
-.textBox {
-    grid-column: span 4;
-    grid-row: span 2;
 
-    max-width: 30rem;
-    width: 100%;
-    height: var(--textBoxSize);
-    padding: 1rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.iconBox {
-    width: var(--iconBoxSize);
-    height: var(--iconBoxSize);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.iconBox a {
-    width: var(--iconSize);
-    height: var(--iconSize);
-}
-.icon {
-    width: var(--iconSize);
+.clayPic {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-invert);
+    
 }
 
 
 .iconSource {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
+    width: 100%;
+    padding: 2rem;
+    text-align: end;
     font-size: .75rem;
     color: var(--font-color);
 }
@@ -134,7 +123,8 @@ button {
 
 #fadein {
     opacity: 1;
-    position: fixed;
+    position: absolute;
+    top: 0;
     width: 100%;
     height: 100%;
     -webkit-transform: translateY(0);

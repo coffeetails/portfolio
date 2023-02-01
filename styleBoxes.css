@@ -1,0 +1,43 @@
+.textBox {
+    grid-column: span 4;
+    grid-row: span 2;
+
+    max-width: 30rem;
+    width: 100%;
+    height: var(--textBoxSize);
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.iconBox {
+    width: var(--iconBoxSize);
+    height: var(--iconBoxSize);
+    transition: .5s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.iconBox a {
+    width: var(--iconSize);
+    height: var(--iconSize);
+}
+.icon {
+    width: var(--iconSize);
+}
+.iconBox:hover {
+    transform: scale3d(1.1,1.1,1);
+}
+
+
+.projectBox {
+    grid-column: span 4;
+    grid-row: span 2;
+
+    padding: 1rem;
+    width: 30rem;
+}

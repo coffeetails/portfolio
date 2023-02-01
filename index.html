@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="styleBoxes.css" />
     <link rel="icon" href="img/favicon.png">
 </head>
 <body>
     <div id="fadein"></div>
 
-    <button id="themeButton" onclick="toggleTheme()">Lightswitch</button>
+    <button id="themeButton" onclick="toggleTheme()"><img src="/icons/icons8-idea-94.png" alt="ljust / mörkt läge" /></button>
     <div class="wrapper">
         <section class="textBox clayit">
             <h1>Hejsan, Monica här!</h1>
@@ -34,7 +35,16 @@
         <section class="textBox clayit">
             <p>Under <a href="https://www.folkuniversitetet.se/vara-skolor/yh-utbildningar/alla-yh-utbildningar/it-data/frontendutvecklare/">YH-utbildningen</a> har jag bland annat fått arbeta med UX/UI, JavaScript, TypeScript, SASS, React, Node.js, neDB och hur agilt arbete fungerar.</p>
         </section>
-        
+
+        <section class="projectBox clayit">
+            <img class="clayPic" src="https://picsum.photos/200" />
+            <h2>Temperaturfilt Guiden</h2>
+            <p>Sök på en plats, välj hur många dagar tillbaka du vill ha och få en tabell med temperaturer bakåt i tid. Välj rätt tid i tabellen och checka av allt eftersom du virkar på din temperaturfilt.</p>
+            <ul>
+                <li><a href="">Se sidan live</a></li>
+                <li><a href="">Github repo</a></li>
+            </ul>
+        </section>
     </div>
     <p class="iconSource">Icons by <a target="_blank" href="https://icons8.com/icons/3d-fluency">Icons8</a></p>
     <script type="text/javascript" src="script.js"></script>

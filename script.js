@@ -9,11 +9,9 @@ function toggleTheme() {
  if (localStorage.getItem('theme') === 'theme-dark'){
     setTheme('theme-light');
     document.body.style.backgroundImage = "url(\"background-light.svg\")";
-    document.querySelector("#themeButton").innerHTML = "Turn off the light";
 } else {
     setTheme('theme-dark');
     document.body.style.backgroundImage = "url(\"background-dark.svg\")";
-    document.querySelector("#themeButton").innerHTML = "Turn on the light";
  }
 }
 
@@ -26,10 +24,8 @@ function setTheme(themeName) {
  if (localStorage.getItem('theme') === 'theme-dark') {
     setTheme('theme-dark');
     document.body.style.backgroundImage = "url(\"background-dark.svg\")";
-    document.querySelector("#themeButton").innerHTML = "Turn on the light";
 } else {
     setTheme('theme-light');
     document.body.style.backgroundImage = "url(\"background-light.svg\")";
-    document.querySelector("#themeButton").innerHTML = "Turn off the light";
  }
 })();
