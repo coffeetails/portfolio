@@ -7,11 +7,12 @@
     --background-colorish: #202020;
     --gray: #313131;
     --font-color: #dfdfdf;
-    --shadow: inset 5.00px 8.66px 13.66px -1.71px rgba(0, 0, 0, 0.15),
-    inset -7.50px -12.99px 13.66px -1.71px rgba(0, 0, 0, 0.3),
-    15.00px 25.98px 10.25px -5.12px rgba(0, 0, 0, 0.6);
+    --shadow: inset 5.00px 8px 13px -2px rgba(117, 117, 117, 0.15),
+        inset -7px -13px 13px -2px rgba(0, 0, 0, 0.3),
+        15px 26px 10px -5px rgba(0, 0, 0, 0.6);
     --shadow-invert: -5px -5px 10px 0px rgba(0, 0, 0, 0.6),
-    5px 5px 10px 0px rgba(0, 0, 0, 0.3);
+        5px 5px 10px 0px rgba(117, 117, 117, 0.15),
+        inset 5px 5px 10px 0px rgba(0, 0, 0, 0.445);
 }
 .theme-light {
     --border-color: #9797972c;
@@ -20,10 +21,11 @@
     --gray: #202020;
     --font-color: #0f0f0f;
     --shadow: 35px 35px 68px 0px rgba(138, 138, 138, 0.5), 
-    inset -6px -6px 16px 0px rgba(138, 138, 138, 0.6), 
-    inset 0px 11px 28px 0px rgb(255, 255, 255);
-    --shadow-invert: -5px -5px 10px 0px red,
-    5px 5px 10px 0px blue;
+        inset -6px -6px 16px 0px rgba(138, 138, 138, 0.6), 
+        inset 0px 11px 28px 0px rgb(255, 255, 255);
+    --shadow-invert: -5px -5px 10px 0px rgba(138, 138, 138, 0.5),
+        5px 5px 10px 0px rgb(255, 255, 255),
+        inset 5px 5px 10px 0px rgba(138, 138, 138, 0.6);
 }
 
 * {
@@ -35,6 +37,7 @@
     --iconBoxSize: 6rem;
     --textBoxSize: 13.5rem;
     --radius: 1rem;
+    --whitespace: 1rem;
 
     font-weight: 300;
     /* font-family: 'Exo 2', sans-serif; */
@@ -59,7 +62,13 @@ button {
     background-color: var(--background-colorish);
     color: var(--font-color);
     border-radius: var(--radius);
+    box-shadow: 0 0 10px 5px var(--background-color);
     cursor: pointer;
+    transition: .5s;
+    z-index: 5;
+}
+button:hover {
+    transform: scale3d(1.1,1.1,1);
 }
 
 #themeButton {
@@ -75,24 +84,55 @@ button {
 }
 
 .wrapper {
-    margin: 2rem;
-    display: grid;
+    margin: auto 0;
+    width: 30rem;
+
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
-.clayit {
-    border-radius: var(--radius);
-    border: 1px solid var(--border-color);
-    background-color: var(--background-colorish);
-    backdrop-filter: blur(50px);
-    box-shadow: var(--shadow);
+.textBox {
+    width: 30rem;
+    height: var(--textBoxSize);
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.clayPic {
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-invert);
-    
+
+.iconBox {
+    width: var(--iconBoxSize);
+    height: var(--iconBoxSize);
+    transition: .5s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.iconBox a {
+    width: var(--iconSize);
+    height: var(--iconSize);
+}
+.icon {
+    width: var(--iconSize);
+}
+.iconBox:hover {
+    transform: scale3d(1.1,1.1,1);
+}
+
+
+.projectBox {
+    padding: 1rem;
+    width: 30rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -106,16 +146,9 @@ button {
 
 
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
     .wrapper {
-        margin: 2rem;
-        display: grid;
-        justify-content: center;
-        gap: 1.5rem;
-    }
-    .textBox {
-        grid-column: span 4;
-        grid-row: span 2;
+
     }
 }
 

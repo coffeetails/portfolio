@@ -1,0 +1,27 @@
+
+.clayit {
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    background-color: var(--background-colorish);
+    backdrop-filter: blur(50px);
+    box-shadow: var(--shadow);
+}
+
+.clayPic {
+    position: relative;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-invert);
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    margin: 0.5rem 1rem 1rem;
+}
+.clayPic:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: var(--shadow-invert);
+}
