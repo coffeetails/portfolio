@@ -2,7 +2,7 @@
     {
         "image": "/screenshots/temperaturfiltguide.jpg",
         "title": "Temperaturfiltguide",
-        "text": "Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. ",
+        "text": "Sök på en plats, välj hur många dagar tillbaka du vill ha och få en tabell med temperaturer bakåt i tid. Välj rätt tid i tabellen och checka av allt eftersom du virkar på din temperaturfilt.",
         "livePage": "https://temperaturfilt.kaffekod.nu/",
         "githubPage": "https://github.com/MonBjo/temprature-blanket"
     },
