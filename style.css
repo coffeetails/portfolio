@@ -5,7 +5,7 @@
     --border-color: #3333332c;
     --background-color: #0f0f0f;
     --background-colorish: #202020;
-    --gray: #313131;
+    --gray: #383838;
     --font-color: #dfdfdf;
     --shadow: inset 5.00px 8px 13px -2px rgba(117, 117, 117, 0.15),
         inset -7px -13px 13px -2px rgba(0, 0, 0, 0.3),
@@ -17,8 +17,8 @@
 .theme-light {
     --border-color: #9797972c;
     --background-color: #dfdfdf;
-    --background-colorish: #d1cece;
-    --gray: #202020;
+    --background-colorish: #dadada;
+    --gray: #adadad;
     --font-color: #0f0f0f;
     --shadow: 35px 35px 68px 0px rgba(138, 138, 138, 0.5), 
         inset -6px -6px 16px 0px rgba(138, 138, 138, 0.6), 
@@ -39,7 +39,7 @@
     --radius: 1rem;
     --whitespace: 1rem;
 
-    font-weight: 300;
+    font-weight: 400;
     /* font-family: 'Exo 2', sans-serif; */
     font-family: 'Quicksand', sans-serif;
     line-height: 1.75;
@@ -58,6 +58,15 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+a {
+    text-decoration: underline;
+    padding: 4px;
+    border-radius: 4px;
+}
+a:hover {
+    box-shadow: inset 0 -2rem 0 var(--gray);
 }
 
 button {
@@ -83,6 +92,7 @@ button:hover {
 #themeButton > img {
     height: 4rem;
 }
+
 
 .wrapper {
     width: 90%;
@@ -116,6 +126,11 @@ button:hover {
 .iconBox a {
     width: var(--iconSize);
     height: var(--iconSize);
+
+    padding: 0;
+}
+.iconBox a:hover {
+    box-shadow: none;
 }
 .icon {
     width: var(--iconSize);
