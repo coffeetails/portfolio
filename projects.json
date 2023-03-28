@@ -1,5 +1,11 @@
 [
     {
+        "image": "/screenshots/chilla.jpg",
+        "title": "Chilla",
+        "text": "Examensarbete med <a href=\"https://github.com/Hampus83\">Hampus Egecioglu</a> på <a href=\"https://www.folkuniversitetet.se/vara-skolor/yh-utbildningar/\">Folkuniversitetet</a>. En sida för avslappning med fokus på andningsövningar och lugnande ljud.",
+        "livePage": "https://chilla.kaffekod.nu/",
+        "githubPage": "https://github.com/MonBjo/chilla"
+    },{
         "image": "/screenshots/pluggait.jpg",
         "title": "Plugga IT",
         "text": "På uppdag av <a href=\"https://www.folkuniversitetet.se/vara-skolor/yh-utbildningar/\">Folkuniversitetet</a> och <a href=\"https://www.zocom.com/\">ZoCom</a> har vi under LIA1 skapat en kampanjsida för att utbildningssökande ska hitta rätt utbildning som passar dem.",
