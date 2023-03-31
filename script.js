@@ -31,11 +31,28 @@ function setTheme(themeName) {
 })();
 
 
+// const techStackElem = document.querySelector(".techStack");
+// const techStackItemsElem = document.querySelectorAll(".techBox");
+// console.log("techStackElem", techStackElem);
+// console.log("techStackElem.children", techStackElem.children);
+// console.log("techStackItemsElem", techStackItemsElem);
+// console.log("techStackElem.children == techStackItemsElem", techStackElem.children == techStackItemsElem);
 
+// for(let item of techStackItemsElem) {
+//     item.animate(
+//         [
+//             { transform: "translateY(0%)" },
+//             { transform: "translateY(-100%)" },
+//             { transform: "translateY(0%)" },
+//         ], 1000);
+//     console.log("item", item.getAnimations());
+// }
+
+        
 fetch("projects.json")
     .then(response => response.json())
     .then(data => { 
-        console.log(data);
+        console.log("projects: ", data);
         data.map(item => {
             const project = `
                 <section class="projectBox clayit">
