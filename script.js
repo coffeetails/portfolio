@@ -31,28 +31,19 @@ function setTheme(themeName) {
 })();
 
 
-// const techStackElem = document.querySelector(".techStack");
-// const techStackItemsElem = document.querySelectorAll(".techBox");
-// console.log("techStackElem", techStackElem);
-// console.log("techStackElem.children", techStackElem.children);
-// console.log("techStackItemsElem", techStackItemsElem);
-// console.log("techStackElem.children == techStackItemsElem", techStackElem.children == techStackItemsElem);
-
-// for(let item of techStackItemsElem) {
-//     item.animate(
-//         [
-//             { transform: "translateY(0%)" },
-//             { transform: "translateY(-100%)" },
-//             { transform: "translateY(0%)" },
-//         ], 1000);
-//     console.log("item", item.getAnimations());
-// }
+console.log(
+    "%cWelcome to the console! \n I don't think you will find much here tbh. Well, except for the projects json that is being fetched. But you could always check out the Elemets or Network-tab or so if you'd like. \n I made this page without any framework, I thought it would make sense to keep it simple as it is a simple page.",
+    "display: inline-block; background: linear-gradient(145deg, rgba(38,162,45,1) 0%, rgba(137,58,189,1) 100%); " +
+    "padding: 12px 24px; " +
+    "border: 1px solid black; border-radius: 12px; " +
+    "font-size: 16px; line-height: 20px; font-family: monospace;"
+);
 
         
 fetch("projects.json")
     .then(response => response.json())
     .then(data => { 
-        console.log("projects: ", data);
+        console.table(data);
         data.map(item => {
             const project = `
                 <section class="projectBox clayit">
