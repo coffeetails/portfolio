@@ -56,9 +56,10 @@ body {
     overflow-x: hidden;
 
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 
@@ -81,13 +82,34 @@ body {
 }
 
 
-a {
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+
+
+.link {
     text-decoration: underline;
     padding: 4px;
     border-radius: 4px;
 }
-a:hover {
+.link:hover {
     box-shadow: inset 0 -2rem 0 var(--gray);
+}
+
+.italic { 
+    font-style: italic; 
+}
+.center { 
+    width: 100%;
+    text-align: center;
+}
+
+
+ul {
+    list-style: inside;
+    list-style-type: " 》";
 }
 
 button {
@@ -126,15 +148,34 @@ button:hover {
     flex-wrap: wrap;
     gap: 2rem;
 }
+.wrapper-cv { max-width: 50rem; }
+
+.sidebar {
+    min-width: 10rem;
+    max-width: 20rem;
+    margin: 1rem;
+    padding: 1rem;
+}
+.sidebar > ul {
+    margin-bottom: 2rem;
+}
 
 .textBox {
     padding: 1rem;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 0.25rem;
 }
 
+.smallTextBox {
+    padding: 1rem 1.5rem;
+}
+.smallTextBox:hover {
+    transform: scale3d(1.1,1.1,1);
+}
 
 .iconBox {
     width: var(--iconBoxSize);
@@ -226,43 +267,3 @@ button:hover {
         /* gap: 2rem 4rem; */
     }
 }
-
-
-#fadein {
-    opacity: 1;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-    background-color: var(--background-color);
-    z-index: 999;
-    animation: fadeinall 1s normal both;
-    animation-fill-mode: forwards;
-    animation-delay: 0.3s; 
-
-    -webkit-animation: fadeinall 1s normal both;
-    -webkit-animation-fill-mode: forwards;
-    -webkit-animation-delay: 0.3s;
-}
-
-@keyframes fadeinall {
-    0% {
-        opacity: 1; }
-    97% {
-        opacity: 0; }
-    98% {
-        opacity: 0;
-        -webkit-transform: translateY(0);
-        transform: translateY(0); }
-    99% {
-        opacity: 0;
-        -webkit-transform: translateY(-100%);
-        transform: translateY(-100%); }
-    100% {
-        opacity: 0;
-        z-index: -1; 
-    } 
-} 

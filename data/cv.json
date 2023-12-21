@@ -1,0 +1,83 @@
+{
+    "Utbildningar": [
+        {
+            "title": "Frontendutvecklare",
+            "time": {
+                "start": "2021-10",
+                "end": "2023-06"
+            },
+            "location": "Folkuniversitetes Yrkeshögskoleutbildning",
+            "description": "Utbildningen har gett mig en stark grund för att jobba med bl.a. Typescript, SASS, React, Node.js, UX/UI i ett agilt arbetssätt."
+        },{
+            "title": "Programmering 1 & 2",
+            "time": {
+                "start": "2018-04",
+                "end": "2018-08"
+            },
+            "location": "Hermods, distanskurser",
+            "description": "Jag fick här lära mig grunderna i objektorienterad programmering i C#. Det vill säga vanliga variabler, metoder, loopar och villkorssatser. Jag lärde mig också om klasser, arv, polymorphism samt projektformer och enklare filhantering."
+        }
+    ], 
+    "Praktik": [
+        {
+            "title": "Frontendutvecklare, LIA 2",
+            "time": {
+                "start": "2023-04",
+                "end": "2023-06"
+            },
+            "location": "TechSeed, Arvika",
+            "description": "Byggde en proof of concept för Thermias nya systemgenerator med start i att undersöka den nuvarande utan källkod. Baserat på det och företaget så experimenterade jag lite med &lt;canvas&gt; och valde sedan techstack innan jag började bygga datastrukturen och själva webbsidan."
+        },{
+            "title": "Frontendutvecklare, LIA 1",
+            "time": {
+                "start": "2022-12",
+                "end": "2023-02"
+            },
+            "location": "ZoCom, distans",
+            "description": "Byggde en webbsida för att locka nya studerande till utbildningarna, skriven i typescript och SCSS. Gjord med React och Firebase som backend. <a href=\"https://plugga-it.se/\" class=\"link\">plugga-it.se</a>"
+        },{
+            "title": "Apputvecklare",
+            "time": {
+                "start": "2018-09",
+                "end": "2018-09"
+            },
+            "location": "Learning Well, Karlstad",
+            "description": "Jag fick här lära mig grunderna i objektorienterad programmering i C#. Det vill säga vanliga variabler, metoder, loopar och villkorssatser. Jag lärde mig också om klasser, arv, polymorphism samt projektformer och enklare filhantering."
+        }
+    ],
+    "Jobb": [
+        {
+            "title": "Parkarbetare",
+            "time": {
+                "start": "2022-06",
+                "end": "2022-08"
+            },
+            "location": "Arvika Kommun, Arvika",
+            "description": "Ordinarie parkarbetare; gräsklippning och skötsel av kommunens grönytor och parker."
+        },{
+            "title": "Säljare / Lagerarbetare",
+            "time": {
+                "start": "2020-12",
+                "end": "2021-07"
+            },
+            "location": "Beijer Byggmaterial, Arvika",
+            "description": "Försäljning och service, med fokus att hjälpa kunder med frågor och inköp. Lagerarbete, truckkörning, lastning och lossning av material från lastbilar samt hjälpa kunder med lastning på kärror."
+        },{
+            "title": "Telefonförsäljare ",
+            "time": {
+                "start": "2020-03",
+                "end": "2020-06"
+            },
+            "location": "PEC Sweden, Karlstad",
+            "description": "Försäljning av olika tidningar till både gamla och nya kunder."
+        },{
+            "title": "Butiksmedarbetare / Städare",
+            "time": {
+                "start": "2017-12",
+                "end": "2019-04"
+            },
+            "location": "Samhall, Arvika",
+            "description": "Hanterade packning av varor för leveranser till storkök och hemleveranser. Ordinarie städarbete av lokaler, förskolor, bibliotek, industrier och stora mataffärer."
+        }
+    ]
+}

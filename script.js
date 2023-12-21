@@ -41,7 +41,7 @@ console.log(
 
 
         
-fetch("projects.json")
+fetch("data/projects.json")
     .then(response => response.json())
     .then(data => { 
         console.table(data);
@@ -54,8 +54,8 @@ fetch("projects.json")
                     <h2>${item.title}</h2>
                     <p>${item.text}</p>
                     <ul>
-                        <li><a href="${item.livePage}">Se sidan live</a></li>
-                        <li><a href="${item.githubPage}">Github repo</a></li>
+                        <li><a href="${item.livePage}" class="link">Se sidan live</a></li>
+                        <li><a href="${item.githubPage}" class="link">Github repo</a></li>
                     </ul>
                 </section>`;
             
