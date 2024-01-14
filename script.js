@@ -38,6 +38,7 @@ console.log(
     "border: 1px solid black; border-radius: 12px; " +
     "font-size: 16px; line-height: 20px; font-family: monospace;"
 );
+console.log("psst, hey, hello 👋 I am actually working on a new portfolio, here is a sneakpeek: \n https://www.figma.com/file/qaPCOMTlYlzWctfOj3E9zE/Portfolio?type=design&node-id=524-2&mode=design");
 
 
         
