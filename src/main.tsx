@@ -4,10 +4,12 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 
 import Root, {  loader as rootLoader, action as rootAction }  from './routes/root';
-import "./index.css";
-import Contact, { loader as contactLoader, } from './routes/contact';
-import ErrorPage from './error-page';
+import Contact, { loader as contactLoader, action as contactAction, } from './routes/contact';
 import EditContact, { action as editAction, } from "./routes/edit";
+import { action as destroyAction } from "./routes/destroy";
+import ErrorPage from './error-page';
+import Index from "./routes/index";
+import "./index.css";
 
 
 const router = createBrowserRouter([
@@ -18,18 +20,31 @@ const router = createBrowserRouter([
         loader: rootLoader,
         action: rootAction,
         children: [
-        {
-            path: "contacts/:contactId",
-            element: <Contact />,
-            loader: contactLoader,
-        },
-        {
-            path: "contacts/:contactId/edit",
-            element: <EditContact />,
-            loader: contactLoader,
-            action: editAction,
-            // You might note we reused the contactLoader for this route. This is only because we're being lazy in the tutorial. There is no reason to attempt to share loaders among routes, they usually have their own.
-        }
+            {
+                errorElement: <ErrorPage />,
+                children: [
+                    { 
+                        index: true, 
+                        element: <Index /> },
+                    {
+                        path: "contacts/:contactId",
+                        element: <Contact />,
+                        loader: contactLoader,
+                        action: contactAction,
+                    },
+                    {
+                        path: "contacts/:contactId/edit",
+                        element: <EditContact />,
+                        loader: contactLoader,
+                        action: editAction,
+                        // You might note we reused the contactLoader for this route. This is only because we're being lazy in the tutorial. There is no reason to attempt to share loaders among routes, they usually have their own.
+                    },
+                    {
+                        path: "contacts/:contactId/destroy",
+                        action: destroyAction,
+                    },
+                ]
+            }
         ]
     },
 ]);
