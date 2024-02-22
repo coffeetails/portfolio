@@ -7,7 +7,10 @@ export default function Root() {
         <div id="sidebar">
           <h1>sidebar</h1>
         </div>
-        <div id="detail"><Outlet /></div>
+        
+        <div id="detail">
+            <Outlet />
+        </div>
       </>
     );
   }
