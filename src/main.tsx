@@ -5,36 +5,31 @@ import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 
 import Root from './routes/root';
 import Index from "./routes/index";
-import Contact from './routes/contact';
-import EditContact from "./routes/edit";
+import Connect from './routes/connect';
+import CV from "./routes/cv";
 import ErrorPage from './error-page';
-// import "./index.css";
+import "./index.css";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root />,
-        // errorElement: <ErrorPage />, 
-        // children: [
-        //     {
-                errorElement: <ErrorPage />,
-                children: [
-                    { 
-                        index: true, 
-                        element: <Index /> 
-                    },
-                    { 
-                        path: "contact", 
-                        element: <Contact />  
-                    },
-                    { 
-                        path: "contact/edit", 
-                        element: <EditContact /> 
-                    },
-                ]
-        //     }
-        // ]
+        errorElement: <ErrorPage />,
+        children: [
+            { 
+                index: true, 
+                element: <Index /> 
+            },
+            { 
+                path: "connect", 
+                element: <Connect />  
+            },
+            { 
+                path: "cv", 
+                element: <CV /> 
+            },
+        ]
     },
 ]);
 
