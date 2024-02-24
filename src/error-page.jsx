@@ -5,11 +5,11 @@ export default function ErrorPage() {
     console.error(error);
 
     return (
-        <div>
+        <div className="error-page">
             <h1>Oops!</h1>
             <img src="/confused.gif"/>
             <p>Sorry, an unexpected error has occurred.</p>
-            <p><i>{error.statusText || error.message}</i></p>
+            <p>{error.status} {error.statusText || error.message}</p>
             <Link to={`/`}>Go back home</Link>
         </div>
     );

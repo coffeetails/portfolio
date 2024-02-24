@@ -10,6 +10,10 @@ import CV from "./routes/cv";
 import ErrorPage from './error-page';
 import "./index.css";
 
+/* Easter egg ideas:
+- a cat appears on the screen every 10min when no interaction occurs
+- the sunsets starts moving
+*/
 
 const router = createBrowserRouter([
     {
