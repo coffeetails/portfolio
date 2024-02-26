@@ -1,20 +1,26 @@
 
 header {
     width: 100vw;
-    height: 35vh;
+    height: 45vh;
     background-color: #76A5AF;
-    background-image: radial-gradient(circle at 50% 200%, rgba(246,255,102,1) 0%, rgba(118,165,175,1) 100%); /* TODO: Needs more tweaking */
+    background-image: radial-gradient(circle at 50% 125%, rgba(246,255,102,1) 0%, rgba(118,165,175,1) 100%); /* TODO: Needs more tweaking */
     box-shadow: inset 0px -4px 4px -2px #1C1C1C;
     z-index: 10;
+    position: relative;
     
-    /* .wrapper-wave { */
-        position: relative;
+    .header-text {
+        position: absolute;
+        top: 20%;
+        left: 15%;
+        z-index: 10;
+        font-size: 4.5rem;
+        font-family: 'Allison';
+    }
 
-        .wave {
-            position: absolute;
-            bottom: 0;
-            z-index: 5;
-        }
-
-    /* } */
+    .wave {
+        position: absolute;
+        bottom: 0;
+        left: -10px;
+        z-index: 5;
+    }
 }
