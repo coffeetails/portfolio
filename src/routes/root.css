@@ -1,34 +1,20 @@
 
+header {
+    width: 100vw;
+    height: 35vh;
+    background-color: #76A5AF;
+    background-image: radial-gradient(circle at 50% 200%, rgba(246,255,102,1) 0%, rgba(118,165,175,1) 100%); /* TODO: Needs more tweaking */
+    box-shadow: inset 0px -4px 4px -2px #1C1C1C;
+    z-index: 10;
+    
+    /* .wrapper-wave { */
+        position: relative;
 
-.wave-one {
-    position: absolute;
-    width: 1440px;
-    height: 349px;
-    left: 0px;
-    top: 67px;
+        .wave {
+            position: absolute;
+            bottom: 0;
+            z-index: 5;
+        }
 
-    background: linear-gradient(180deg, #379A5E 0%, #7A42C2 100%);
-    box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.25);
-}
-
-.wave-two {
-    position: absolute;
-    width: 1440px;
-    height: 316px;
-    left: 0px;
-    top: 100px;
-
-    background: linear-gradient(180deg, #38761D 4.09%, #0C343D 80.34%);
-    box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.25);
-}
-
-.wave-three {
-    position: absolute;
-    width: 1438px;
-    height: 207px;
-    left: 0px;
-    top: 209px;
-
-    background: linear-gradient(180deg, #274E13 0%, #0C343D 97%, #1C1C1C 100%);
-    box-shadow: inset 0px 4px 4px rgba(255, 255, 255, 0.25);
+    /* } */
 }
