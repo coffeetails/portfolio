@@ -2,6 +2,10 @@
     font-family: "Nunito";
     src: url(/Nunito/Nunito-VariableFont_wght.ttf);
 }
+@font-face {
+    font-family: "Allison";
+    src: url(/Allison/Allison-Regular.ttf);
+}
 /* Should I remove the static versions of Nunito? *\
 \* Do I need the italic version?                  */
 
