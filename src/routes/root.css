@@ -20,7 +20,7 @@ header {
     .wave {
         position: absolute;
         bottom: 0;
-        left: -10px;
+        /* left: -10px; */
         z-index: 5;
     }
 }
