@@ -3,18 +3,24 @@ import { Outlet, Link } from "react-router-dom";
 import { useLayoutEffect, useState, useRef } from "react";
 
 import './root.css';
-import WaveOne from '/wave1.svg';
-import WaveTwo from '/wave2.svg';
-import WaveThree from '/wave3.svg';
-import WaveTest from './waveTest';
+
+import WaveOneSvg from '/wave1.svg';
+import WaveTwoSvg from '/wave2.svg';
+import WaveThreeSvg from '/wave3.svg';
+
+import WaveOne from './waves/waveOne';
+import WaveTwo from './waves/waveTwo';
+import WaveThree from './waves/waveThree';
 
 export default function Root() {
-    let headerElem = useRef(null);
-    let [height, setHeight] = useState(null);
-    let [width, setWidth] = useState(null);
+    const headerElem = useRef(null);
+    const [height, setHeight] = useState(null);
+    const [width, setWidth] = useState(null);
+
     useLayoutEffect(() => setHeight(headerElem.current.offsetHeight));
     useLayoutEffect(() => setWidth(headerElem.current.offsetWidth));
-    useLayoutEffect(() => console.log(headerElem));
+
+    const viewBoxValue = "0 0 " + width + " " + height;
 
     return (
         <>
@@ -22,11 +28,13 @@ export default function Root() {
             <h1 className="header-text">{width + " x " + height}</h1>
             {/* <div className="wrapper-wave"> */}
                 
-                <object data={WaveOne} type="image/svg+xml" className="wave"></object>
-                <object data={WaveTwo} type="image/svg+xml" className="wave"></object>
-                <object data={WaveThree} type="image/svg+xml" className="wave"></object>
+                {/* <object data={WaveOneSvg} type="image/svg+xml" className="wave"></object> */}
+                {/* <object data={WaveTwoSvg} type="image/svg+xml" className="wave"></object> */}
+                <object data={WaveThreeSvg} type="image/svg+xml" className="wave"></object>
 
-                <WaveTest width={width} height={height} />
+                {/* <WaveOne width={width} height={height} viewBoxValue={viewBoxValue} /> */}
+                {/* <WaveTwo width={width} height={height} viewBoxValue={viewBoxValue} /> */}
+                <WaveThree width={width} height={height} viewBoxValue={viewBoxValue} />
 
             {/* </div> */}
         </header>
