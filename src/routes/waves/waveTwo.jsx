@@ -24,7 +24,7 @@ export default function waveTwo({width, height, viewBoxValue}) {
                     <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"/>
                     <feBlend mode="normal" in2="shape" result="effect1_innerShadow_705_1598"/>
                 </filter>
-                <linearGradient id="paint0_linear_705_1598" x1="720" y1="12.9304" x2="720" y2="316" gradientUnits="userSpaceOnUse">
+                <linearGradient id="paint0_linear_705_1598" x1={width*0.5} y1={height*0.3} x2={width*0.5} y2={height} gradientUnits="userSpaceOnUse">
                     <stop stop-color="#38761D"/>
                     <stop offset="0.795" stop-color="#0C343D"/>
                 </linearGradient>

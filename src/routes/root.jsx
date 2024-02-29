@@ -28,12 +28,12 @@ export default function Root() {
             <h1 className="header-text">{width + " x " + height}</h1>
             {/* <div className="wrapper-wave"> */}
                 
-                {/* <object data={WaveOneSvg} type="image/svg+xml" className="wave"></object> */}
-                {/* <object data={WaveTwoSvg} type="image/svg+xml" className="wave"></object> */}
-                <object data={WaveThreeSvg} type="image/svg+xml" className="wave"></object>
+                {/* <object data={WaveOneSvg} type="image/svg+xml" className="wave"></object>
+                <object data={WaveTwoSvg} type="image/svg+xml" className="wave"></object>
+                <object data={WaveThreeSvg} type="image/svg+xml" className="wave"></object> */}
 
-                {/* <WaveOne width={width} height={height} viewBoxValue={viewBoxValue} /> */}
-                {/* <WaveTwo width={width} height={height} viewBoxValue={viewBoxValue} /> */}
+                <WaveOne width={width} height={height} viewBoxValue={viewBoxValue} />
+                <WaveTwo width={width} height={height} viewBoxValue={viewBoxValue} />
                 <WaveThree width={width} height={height} viewBoxValue={viewBoxValue} />
 
             {/* </div> */}

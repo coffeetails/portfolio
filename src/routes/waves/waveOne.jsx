@@ -24,7 +24,7 @@ export default function waveOne({width, height, viewBoxValue}) {
                     <feBlend mode="normal" in2="shape" result="effect1_innerShadow_705_1597"/>
                 </filter>
                 {/* <linearGradient id="paint0_linear_705_1597" x1="720" y1="0" x2="720" y2="349" gradientUnits="userSpaceOnUse"> */}
-                <linearGradient id="paint0_linear_705_1597" x1={width*0.5} y1={height*0} x2={width*0.5} y2={height} gradientUnits="userSpaceOnUse">
+                <linearGradient id="paint0_linear_705_1597" x1={width*0.5} y1={height*0.2} x2={width*0.5} y2={height} gradientUnits="userSpaceOnUse">
                     <stop stop-color="#379A5E"/>
                     <stop offset="1" stop-color="#7A42C2"/>
                 </linearGradient>
