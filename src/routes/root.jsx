@@ -4,13 +4,10 @@ import { useLayoutEffect, useState, useRef } from "react";
 
 import './root.css';
 
-import WaveOneSvg from '/wave1.svg';
-import WaveTwoSvg from '/wave2.svg';
-import WaveThreeSvg from '/wave3.svg';
-
 import WaveOne from './waves/waveOne';
 import WaveTwo from './waves/waveTwo';
 import WaveThree from './waves/waveThree';
+
 
 export default function Root() {
     const headerElem = useRef(null);
@@ -25,18 +22,11 @@ export default function Root() {
     return (
         <>
         <header ref={headerElem}>
-            <h1 className="header-text">{width + " x " + height}</h1>
-            {/* <div className="wrapper-wave"> */}
-                
-                {/* <object data={WaveOneSvg} type="image/svg+xml" className="wave"></object>
-                <object data={WaveTwoSvg} type="image/svg+xml" className="wave"></object>
-                <object data={WaveThreeSvg} type="image/svg+xml" className="wave"></object> */}
-
-                <WaveOne width={width} height={height} viewBoxValue={viewBoxValue} />
-                <WaveTwo width={width} height={height} viewBoxValue={viewBoxValue} />
-                <WaveThree width={width} height={height} viewBoxValue={viewBoxValue} />
-
-            {/* </div> */}
+            <WaveOne width={width} height={height} viewBoxValue={viewBoxValue} />
+            <WaveTwo width={width} height={height} viewBoxValue={viewBoxValue} />
+            <WaveThree width={width} height={height} viewBoxValue={viewBoxValue} />
+            <h1 className="header-text">Monica Björk</h1>
+            <div className="borderShadow"> </div>
         </header>
         
         <main>
@@ -44,8 +34,8 @@ export default function Root() {
                 <ul>
                     <li><Link to={`/`}>Hem</Link></li>
                     <li><Link to={`/cv`}>CV</Link></li>
+                    <li><Link to={`/projects`}>Projekt</Link></li>
                     <li><Link to={`/connect`}>Kontakt</Link></li>
-                    <li><Link to={`/nope`}>Nope</Link></li>
                 </ul>
             </nav>
             <Outlet />

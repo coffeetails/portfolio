@@ -1,26 +1,58 @@
 
 header {
-    width: 100vw;
+    width: 100%;
     height: 45vh;
     background-color: #76A5AF;
     background-image: radial-gradient(circle at 50% 125%, rgba(246,255,102,1) 0%, rgba(118,165,175,1) 100%); /* TODO: Needs more tweaking */
-    box-shadow: inset 0px -4px 4px -2px #1C1C1C;
-    z-index: 10;
     position: relative;
     
     .header-text {
         position: absolute;
         top: 20%;
         left: 15%;
-        z-index: 10;
+        /* z-index: 10; */
         font-size: 4.5rem;
         font-family: 'Allison';
     }
-
+    
     .wave {
         position: absolute;
         bottom: 0;
-        /* left: -10px; */
-        z-index: 5;
     }
+
+    .borderShadow {
+        position: absolute;
+        width: 100%;
+        height: 10%;
+        bottom: 0;
+        box-shadow: inset 0 -4px 4px #1C1C1C;
+    }
+}
+
+
+main {
+    width: 95%;
+    max-width: 60rem;
+    height: 100%;
+    min-height: 75vh;
+    margin: 0 auto;
+
+    ul {
+        list-style: none;
+        margin: 0.5rem;
+        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        li {
+            padding: 0.5rem 1rem;
+        }
+    }
+}
+
+
+.projectItem img {
+    width: 25%;
 }

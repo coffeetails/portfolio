@@ -7,6 +7,7 @@ import Root from './routes/root';
 import Index from "./routes/index";
 import Connect from './routes/connect';
 import CV from "./routes/cv";
+import Projects from "./routes/projects";
 import ErrorPage from './error-page';
 import "./index.css";
 
@@ -32,6 +33,9 @@ const router = createBrowserRouter([
             { 
                 path: "cv", 
                 element: <CV /> 
+            },{ 
+                path: "projects", 
+                element: <Projects /> 
             },
         ]
     },
