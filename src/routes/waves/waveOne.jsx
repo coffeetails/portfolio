@@ -13,8 +13,8 @@ export default function waveOne({width, height, viewBoxValue}) {
                 <path d={path} fill="url(#paint0_linear_705_1597)"/>
             </g>
             <defs>
-                <filter id="filter0_i_705_1597" x="0" y={height*0.16} width={width} height={height} filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <filter id="filter0_i_705_1597" x="0" y={height*0.16} width={width} height={height} filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                     <feOffset dy="4"/>
@@ -25,8 +25,8 @@ export default function waveOne({width, height, viewBoxValue}) {
                 </filter>
                 {/* <linearGradient id="paint0_linear_705_1597" x1="720" y1="0" x2="720" y2="349" gradientUnits="userSpaceOnUse"> */}
                 <linearGradient id="paint0_linear_705_1597" x1={width*0.5} y1={height*0.2} x2={width*0.5} y2={height} gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#379A5E"/>
-                    <stop offset="1" stop-color="#7A42C2"/>
+                    <stop stopColor="#379A5E"/>
+                    <stop offset="1" stopColor="#7A42C2"/>
                 </linearGradient>
             </defs>
         </svg>

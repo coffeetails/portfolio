@@ -14,8 +14,8 @@ export default function waveTwo({width, height, viewBoxValue}) {
                 <path d={path} fill="url(#paint0_linear_705_1598)"/>
             </g>
             <defs>
-                <filter id="filter0_i_705_1598" x="0" y="0" width={width} height={height} filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <filter id="filter0_i_705_1598" x="0" y="0" width={width} height={height} filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                     <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                     <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                     <feOffset dy="4"/>
@@ -25,8 +25,8 @@ export default function waveTwo({width, height, viewBoxValue}) {
                     <feBlend mode="normal" in2="shape" result="effect1_innerShadow_705_1598"/>
                 </filter>
                 <linearGradient id="paint0_linear_705_1598" x1={width*0.5} y1={height*0.3} x2={width*0.5} y2={height} gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#38761D"/>
-                    <stop offset="0.795" stop-color="#0C343D"/>
+                    <stop stopColor="#38761D"/>
+                    <stop offset="0.795" stopColor="#0C343D"/>
                 </linearGradient>
             </defs>
         </svg>
