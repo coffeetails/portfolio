@@ -1,5 +1,5 @@
-{
-    "Utbildningar": [
+[
+    {"Utbildningar": [
         {
             "title": "Frontendutvecklare",
             "time": {
@@ -17,8 +17,8 @@
             "location": "Hermods, distanskurser",
             "description": "Jag fick här lära mig grunderna i objektorienterad programmering i C#. Det vill säga vanliga variabler, metoder, loopar och villkorssatser. Jag lärde mig också om klasser, arv, polymorphism samt projektformer och enklare filhantering."
         }
-    ], 
-    "Praktik": [
+    ]}, 
+    {"Praktik": [
         {
             "title": "Frontendutvecklare, LIA 2",
             "time": {
@@ -26,7 +26,7 @@
                 "end": "2023-06"
             },
             "location": "TechSeed, Arvika",
-            "description": "Byggde en proof of concept för Thermias nya systemgenerator med start i att undersöka den nuvarande utan källkod. Baserat på det och företaget så experimenterade jag lite med &lt;canvas&gt; och valde sedan techstack innan jag började bygga datastrukturen och själva webbsidan."
+            "description": "Byggde en proof of concept för Thermias nya systemgenerator med start i att undersöka den nuvarande utan källkod. Baserat på det och företaget så experimenterade jag lite med canvas och valde sedan techstack innan jag började bygga datastrukturen och själva webbsidan."
         },{
             "title": "Frontendutvecklare, LIA 1",
             "time": {
@@ -44,8 +44,8 @@
             "location": "Learning Well, Karlstad",
             "description": "Jag fick här lära mig grunderna i objektorienterad programmering i C#. Det vill säga vanliga variabler, metoder, loopar och villkorssatser. Jag lärde mig också om klasser, arv, polymorphism samt projektformer och enklare filhantering."
         }
-    ],
-    "Jobb": [
+    ]},
+    {"Jobb": [
         {
             "title": "Parkarbetare",
             "time": {
@@ -79,5 +79,5 @@
             "location": "Samhall, Arvika",
             "description": "Hanterade packning av varor för leveranser till storkök och hemleveranser. Ordinarie städarbete av lokaler, förskolor, bibliotek, industrier och stora mataffärer."
         }
-    ]
-}
+    ]}
+]
