@@ -25,7 +25,10 @@ export default function Root() {
             <WaveOne width={width} height={height} viewBoxValue={viewBoxValue} />
             <WaveTwo width={width} height={height} viewBoxValue={viewBoxValue} />
             <WaveThree width={width} height={height} viewBoxValue={viewBoxValue} />
-            <h1 className="header-text">Monica Björk</h1>
+            <div className="header-text">
+                <h1>Monica Björk</h1>
+                <p>underrubrik</p>
+            </div>
             <div className="borderShadow"> </div>
         </header>
         
