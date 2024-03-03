@@ -1,0 +1,16 @@
+.cvCategory {
+    margin: 3rem 0;
+    
+    h2 {
+        text-align: center;
+    }
+
+    .cvItem {
+        margin: 1rem 0;
+        font-size: 1.1rem;
+        
+        :last-child {
+            font-size: 1rem;
+        }
+    }
+}

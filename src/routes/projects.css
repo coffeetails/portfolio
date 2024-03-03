@@ -1,0 +1,25 @@
+.projectItem {
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 5rem 0;
+
+    img {
+        min-width: 7rem;
+        width: 90%;
+        max-width: 20rem;
+        margin: 0 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .textWrapper {
+        min-width: 7rem;
+        max-width: 30rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 0.5rem;
+    }
+}

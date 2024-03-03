@@ -23,8 +23,7 @@ export default function Projects() {
 
     return (
         <>
-        <h1>Projekt</h1>
-        {projectsDataDisplay}
+            {projectsDataDisplay}
         </>
     );
 }
