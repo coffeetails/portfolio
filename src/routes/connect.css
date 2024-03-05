@@ -1,0 +1,14 @@
+.contact {
+    margin: 1rem 0;
+    font-style: normal;
+    line-height: 2.5rem;
+
+    a[href^='mailto']::before {
+        content: '📧 ';
+    }
+      
+    a[href^='tel']::before {
+        content: '📞 ';
+    }
+      
+}
