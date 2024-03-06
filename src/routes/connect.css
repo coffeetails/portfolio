@@ -13,6 +13,7 @@
 }
 
 .email-form {
+    position: relative;
     width: 100%;
     max-width: 30rem;
     margin: 1rem 0;
@@ -29,6 +30,22 @@
         background-color: transparent;
         color: white;
         font-size: 1rem;
+    }
+
+    .captcha {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #1c1c1cbb;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        display: none;
+        * {display: none;}
     }
 
     input[type=submit] {
