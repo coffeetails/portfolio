@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useState , useRef } from "react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import "./connect.css";
@@ -6,11 +6,16 @@ import "./connect.css";
 export default function Connect() {
     const formRef = useRef();
     const captchaRef = useRef();
+    const [captchaClassName, setCaptchaClassName] = useState("hidden");
+    
+    const submitForm = (event) => {
+        event.preventDefault();
+        setCaptchaClassName("captcha");    
+    };
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+    function captchaResponse() {
         const captchaToken = captchaRef.current.getValue();
-  
+
         emailjs.sendForm('contact_service', 'template_p5pyw6i', formRef.current, {
             "publicKey": '9liwcYmbKSut2URU9',
             "g-recaptcha-response": captchaToken,
@@ -25,7 +30,8 @@ export default function Connect() {
         );
 
         captchaRef.current.reset();
-    };
+        // setCaptchaClassName("hidden");
+    }
 
     return (
         <article className="connect">
@@ -41,14 +47,14 @@ export default function Connect() {
                 
             <section>
                 <p>Eller skicka något direkt till min mail nedan: </p>
-                <form className="email-form" ref={formRef} onSubmit={sendEmail}>
+                <form className="email-form" ref={formRef} onSubmit={submitForm}>
                     <label>Namn: </label>
                     <input type="text" name="user_name"  placeholder="John Doe" required  />
                     <label>Email: </label>
                     <input type="email" name="user_email"  placeholder="dinemail@example.com" required  />
                     <label>Meddelande: </label>
                     <textarea name="message" placeholder="Hej, vilken spännande portfolio du har! Jag tänkte att..." required ></textarea>
-                    <ReCAPTCHA sitekey="6LfjvYwpAAAAAEygXYHHuB1orYfnBZPlq-Ix3pjA" ref={captchaRef} className="captcha" />
+                    <ReCAPTCHA sitekey="6LfjvYwpAAAAAEygXYHHuB1orYfnBZPlq-Ix3pjA" ref={captchaRef} theme="dark" className={captchaClassName} onChange={captchaResponse} />
                     <input type="submit" value="Skicka" />
                 </form>
             </section>
