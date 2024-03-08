@@ -45,6 +45,9 @@
         justify-content: center;
         
     }
+    .captchaEmail {
+        align-self: center;
+    }
 
     input[type=submit] {
         background-color: #38761D;

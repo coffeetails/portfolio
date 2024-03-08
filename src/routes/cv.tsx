@@ -1,13 +1,15 @@
 import cvData from "../data/cv.json";
 import parse from "html-react-parser";
 import "./cv.css";
+// import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 
 export default function CV() {
 
     const cvDataDisplay = cvData.map((category, x) => {
         for(let categoryKey in category) {
-            const items = category[categoryKey].map((item, y) => {
+            const items = category[categoryKey].map((item: { title: string; time: { start: string; end: string; }; location: string ; description: string; }, y: string) => {
                 console.log(item);
+
                 
                 const cvKey = "cv-" + x + "-" + y;
                 
