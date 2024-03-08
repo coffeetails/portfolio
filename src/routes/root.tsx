@@ -11,13 +11,13 @@ import WaveThree from './waves/waveThree';
 
 export default function Root() {
     const headerElem = useRef(null);
-    const [height, setHeight] = useState(null);
-    const [width, setWidth] = useState(null);
+    const [height, setHeight] = useState<number>(0);
+    const [width, setWidth] = useState<number>(0);
     const [viewBoxValue, setViewBoxValue] = useState("0 0 0 0");
 
     useLayoutEffect(() => {
-        setHeight(headerElem.current.offsetHeight)
-        setWidth(headerElem.current.offsetWidth);
+        setHeight(headerElem.current!.offsetHeight)
+        setWidth(headerElem.current!.offsetWidth);
         setViewBoxValue("0 0 " + width + " " + height);
     });
 

@@ -1,4 +1,5 @@
-import React, { useEffect, useState , useRef } from "react";
+// import React, { useEffect, useState , useRef } from "react";
+import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import "./connect.css";
@@ -11,22 +12,24 @@ export default function Connect() {
     const submitForm = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
         // setCaptchaClassName("captcha");
-        const captchaToken = captchaRef.current.getValue();
+        // if(captchaRef.current && formRef.current) {
+            const captchaToken = captchaRef.current!.getValue();
 
-        emailjs.sendForm('contact_service', 'template_p5pyw6i', formRef.current, {
-            "publicKey": '9liwcYmbKSut2URU9',
-            "g-recaptcha-response": captchaToken,
-        })
-        .then(
-            () => {
-                console.log('SUCCESS!');
-            },
-            (error) => {
-                console.log('FAILED...', error);
-            },
-        );
+            emailjs.sendForm('contact_service', 'template_p5pyw6i', formRef.current!, {
+                "publicKey": '9liwcYmbKSut2URU9',
+                "g-recaptcha-response": captchaToken,
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                },
+                (error) => {
+                    console.log('FAILED...', error);
+                },
+            );
 
-        captchaRef.current.reset();
+            captchaRef.current!.reset();
+        // }
     };
     
     // function captchaResponse() {
