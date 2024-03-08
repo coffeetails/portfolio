@@ -5,9 +5,9 @@ import "./cv.css";
 
 export default function CV() {
 
-    const cvDataDisplay = cvData.map((category, x) => {
+    const cvDataDisplay = cvData.map((category: { [key: string]: any }, x: number) => {
         for(let categoryKey in category) {
-            const items = category[categoryKey].map((item: { title: string; time: { start: string; end: string; }; location: string ; description: string; }, y: string) => {
+            const items = category[categoryKey].map((item: { title: string; time: { start: string; end: string; }; location: string ; description: string; }, y: number) => {
                 console.log(item);
 
                 

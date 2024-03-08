@@ -5,8 +5,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 import "./connect.css";
 
 export default function Connect() {
-    const formRef = useRef();
-    const captchaRef = useRef();
+    const formRef = useRef<HTMLFormElement | null>(null);
+    const captchaRef = useRef<ReCAPTCHA>(null);
     // const [captchaClassName, setCaptchaClassName] = useState("hidden");
     
     const submitForm = (event: { preventDefault: () => void; }) => {
