@@ -1,5 +1,10 @@
+type Props = {
+    width: number;
+    height: number;
+    viewBoxValue: string;
+}
 
-export default function waveThree({width, height, viewBoxValue}) {
+export default function waveThree({width, height, viewBoxValue}: Props) {
     let path = "M0 " + height + 
     "V" + (height*0.6) + 
     "Q " + (width*0.15) + " " + (height*0.25) + " " + (width*0.25) + " " + (height*0.5) +

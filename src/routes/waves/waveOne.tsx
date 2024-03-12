@@ -1,5 +1,10 @@
+type Props = {
+    width: number;
+    height: number;
+    viewBoxValue: string;
+}
 
-export default function waveOne({width, height, viewBoxValue}) {
+export default function waveOne({width, height, viewBoxValue}: Props) {
     let path = "M0 " + height +
         "V" + (height*0.3) + 
         "Q " + (width*0.2) + " " + (height*-0.01) + " " + (width*0.5) + " " + (height*0.4) +

@@ -1,5 +1,10 @@
+type Props = {
+    width: number;
+    height: number;
+    viewBoxValue: string;
+}
 
-export default function waveTwo({width, height, viewBoxValue}) {
+export default function waveTwo({width, height, viewBoxValue}: Props) {
     let path = "M0 " + height +
         "V" + (height*0.4) + 
         "Q " + (width*0.1) + " " + (height*0.25) + " " + (width*0.3) + " " + (height*0.4) +
