@@ -1,5 +1,5 @@
 // import React, { useEffect, useState , useRef } from "react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import "./connect.css";
@@ -7,51 +7,31 @@ import "./connect.css";
 export default function Connect() {
     const formRef = useRef<HTMLFormElement | null>(null);
     const captchaRef = useRef<ReCAPTCHA>(null);
-    // const [captchaClassName, setCaptchaClassName] = useState("hidden");
     
     const submitForm = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
-        // setCaptchaClassName("captcha");
-        // if(captchaRef.current && formRef.current) {
-            const captchaToken = captchaRef.current!.getValue();
+        const captchaToken = captchaRef.current!.getValue();
+        emailjs.init({"publicKey": '9liwcYmbKSut2URU9'}); // Public key and user id is the same.
+        
+        emailjs.send('contact_service', 'template_p5pyw6i', {
+            // ...formRef.current!,
+            "user_name": "userName",
+            "user_email": "userEmail",
+            "message": "message",
+            "g-recaptcha-response": captchaToken,
+        })
+        .then(
+            () => {
+                console.log('SUCCESS!');
+            },
+            (error) => {
+                console.log('FAILED...', error);
+            },
+        );
 
-            emailjs.sendForm('contact_service', 'template_p5pyw6i', formRef.current!, {
-                "publicKey": '9liwcYmbKSut2URU9',
-                "g-recaptcha-response": captchaToken,
-            })
-            .then(
-                () => {
-                    console.log('SUCCESS!');
-                },
-                (error) => {
-                    console.log('FAILED...', error);
-                },
-            );
-
-            captchaRef.current!.reset();
-        // }
+        captchaRef.current!.reset();
     };
-    
-    // function captchaResponse() {
-    //     const captchaToken = captchaRef.current.getValue();
 
-    //     emailjs.sendForm('contact_service', 'template_p5pyw6i', formRef.current, {
-    //         "publicKey": '9liwcYmbKSut2URU9',
-    //         "g-recaptcha-response": captchaToken,
-    //     })
-    //     .then(
-    //         () => {
-    //             console.log('SUCCESS!');
-    //         },
-    //         (error) => {
-    //             console.log('FAILED...', error);
-    //         },
-    //     );
-
-    //     captchaRef.current.reset();
-    //     // setCaptchaClassName("hidden");
-    // }
-    
 
     return (
         <article className="connect">
@@ -73,8 +53,6 @@ export default function Connect() {
                     <input type="email" name="user_email"  placeholder="dinemail@example.com" required  />
                     <label>Meddelande: </label>
                     <textarea name="message" placeholder="Hej, vilken spännande portfolio du har! Jag tänkte att..." required ></textarea>
-                    {/* <ReCAPTCHA sitekey="6LfjvYwpAAAAAEygXYHHuB1orYfnBZPlq-Ix3pjA" ref={captchaRef} theme="dark" className={captchaClassName} onChange={captchaResponse} />
-                    <input type="submit" value="Skicka" onChange={showCaptcha} /> */}
                     <ReCAPTCHA sitekey="6LfjvYwpAAAAAEygXYHHuB1orYfnBZPlq-Ix3pjA" ref={captchaRef} theme="dark" className="captchaEmail" />
                     <input type="submit" value="Skicka" />
                 </form>
