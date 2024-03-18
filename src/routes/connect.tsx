@@ -1,5 +1,5 @@
 // import React, { useEffect, useState , useRef } from "react";
-import { useRef, useState } from "react";
+import { SetStateAction, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import "./connect.css";
@@ -7,17 +7,26 @@ import "./connect.css";
 export default function Connect() {
     const formRef = useRef<HTMLFormElement | null>(null);
     const captchaRef = useRef<ReCAPTCHA>(null);
+    const [userName, setUserName] = useState<string>("");
+    const [userEmail, setUserEmail] = useState<string>("");
+    const [message, setMessage] = useState<string>("");
     
     const submitForm = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
         const captchaToken = captchaRef.current!.getValue();
         emailjs.init({"publicKey": '9liwcYmbKSut2URU9'}); // Public key and user id is the same.
         
+        console.log("userName", userName);
+        console.log("userEmail", userEmail);
+        console.log("message", message);
+        console.log("captchaToken", captchaToken);
+        
+        
         emailjs.send('contact_service', 'template_p5pyw6i', {
             // ...formRef.current!,
-            "user_name": "userName",
-            "user_email": "userEmail",
-            "message": "message",
+            "user_name": userName,
+            "user_email": userEmail,
+            "message": message,
             "g-recaptcha-response": captchaToken,
         })
         .then(
@@ -30,6 +39,18 @@ export default function Connect() {
         );
 
         captchaRef.current!.reset();
+    };
+
+    const updateUserName = (event: { target: { value: SetStateAction<string>; }; }) => {
+        setUserName(event.target.value);
+    };
+
+    const updateUserEmail = (event: { target: { value: SetStateAction<string>; }; }) => {
+        setUserEmail(event.target.value);
+    };
+
+    const updateMessage = (event: { target: { value: SetStateAction<string>; }; }) => {
+        setMessage(event.target.value);
     };
 
 
@@ -48,11 +69,11 @@ export default function Connect() {
                 <p>Eller skicka något direkt till min mail nedan: </p>
                 <form className="email-form" ref={formRef} onSubmit={submitForm}>
                     <label>Namn: </label>
-                    <input type="text" name="user_name"  placeholder="John Doe" required  />
+                    <input type="text" name="user_name"  placeholder="John Doe" value={userName} onChange={updateUserName} required  />
                     <label>Email: </label>
-                    <input type="email" name="user_email"  placeholder="dinemail@example.com" required  />
+                    <input type="email" name="user_email"  placeholder="dinemail@example.com" value={userEmail} onChange={updateUserEmail}  required  />
                     <label>Meddelande: </label>
-                    <textarea name="message" placeholder="Hej, vilken spännande portfolio du har! Jag tänkte att..." required ></textarea>
+                    <textarea name="message" placeholder="Hej, vilken spännande portfolio du har! Jag tänkte att..." value={message} onChange={updateMessage}  required ></textarea>
                     <ReCAPTCHA sitekey="6LfjvYwpAAAAAEygXYHHuB1orYfnBZPlq-Ix3pjA" ref={captchaRef} theme="dark" className="captchaEmail" />
                     <input type="submit" value="Skicka" />
                 </form>
