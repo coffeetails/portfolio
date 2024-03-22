@@ -38,6 +38,7 @@ export default function Root() {
             break;
         default:
             subtitle = "";
+            console.log("Where are we now? 👀");
             break;
     }
 
