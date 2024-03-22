@@ -37,16 +37,17 @@ a {
     text-decoration-line: underline;
     text-underline-offset: 6px;
     transition: 0.5s;
+    padding: 0 5px;
     
     &:visited {
         color: #cacaca;
     }
     &:hover {
         text-underline-offset: calc(-1rem - 4px);
-        /* text-decoration-line: overline; */
     }
     &:active {
-        background-color: blue;
+        border: 5px solid #a5e79c;
+        border-radius: 2px;
         text-underline-offset: calc(-1rem - 4px);
     }
 }
