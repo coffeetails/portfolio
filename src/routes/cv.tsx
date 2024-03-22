@@ -13,14 +13,14 @@ export default function CV() {
 
 
     const cvDataDisplay = cvData.map((category: { [key: string]: any }, x: number) => {
-        for(let categoryKey in category) {
-            const items = category[categoryKey].map((item: { title: string; time: { start: string; end: string; }; location: string ; description: string; }, y: number) => {
+        for(let categoryKeyName in category) {
+            const items = category[categoryKeyName].map((item: { title: string; time: { start: string; end: string; }; location: string ; description: string; }, y: number) => {
                 // console.log(item);
                 
-                const cvKey = "cv-" + x + "-" + y;
+                const itemKey = "cv-" + x + "-" + y;
                 
                 return (
-                    <section className="cvItem" key={cvKey}>
+                    <section className="cvItem" key={itemKey}>
                         <p>{item.title}</p>
                         <p>{item.time.start} - {item.time.end}</p>
                         <address>{item.location}</address>
@@ -29,9 +29,11 @@ export default function CV() {
                 );
             });
 
+            const categoryKey = "cv-" + x;
+
             return (
-                <section className="cvCategory">
-                    <h2>{categoryKey}</h2>
+                <section className="cvCategory" key={categoryKey}>
+                    <h2>{categoryKeyName}</h2>
                     {items}
                 </section>
             );
