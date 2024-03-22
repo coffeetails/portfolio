@@ -1,15 +1,21 @@
-import cvData from "../data/cv.json";
+import { useEffect } from "react";
 import parse from "html-react-parser";
+
+import cvData from "../data/cv.json";
 import "./cv.css";
 // import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 
 export default function CV() {
 
+    useEffect(() => {
+        document.title = 'Kaffekod - CV'; // Quick solution
+    }, []);
+
+
     const cvDataDisplay = cvData.map((category: { [key: string]: any }, x: number) => {
         for(let categoryKey in category) {
             const items = category[categoryKey].map((item: { title: string; time: { start: string; end: string; }; location: string ; description: string; }, y: number) => {
                 // console.log(item);
-
                 
                 const cvKey = "cv-" + x + "-" + y;
                 

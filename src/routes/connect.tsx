@@ -1,4 +1,4 @@
-import { SetStateAction, useRef, useState } from "react";
+import { SetStateAction, useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import "./connect.css";
@@ -10,6 +10,11 @@ export default function Connect() {
     const [userEmail, setUserEmail] = useState<string>("");
     const [message, setMessage] = useState<string>("");
     const [submitDisabled, setSubmitDisabled] = useState<boolean>(false);
+      
+    useEffect(() => {
+        document.title = 'Kaffekod - Kontakt';
+    }, []);
+
  
     const submitForm = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
