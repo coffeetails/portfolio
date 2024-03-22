@@ -8,7 +8,7 @@ export default function CV() {
     const cvDataDisplay = cvData.map((category: { [key: string]: any }, x: number) => {
         for(let categoryKey in category) {
             const items = category[categoryKey].map((item: { title: string; time: { start: string; end: string; }; location: string ; description: string; }, y: number) => {
-                console.log(item);
+                // console.log(item);
 
                 
                 const cvKey = "cv-" + x + "-" + y;

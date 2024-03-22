@@ -5,7 +5,7 @@ header {
     background-color: #76A5AF;
     background-image: radial-gradient(circle at 50% 125%, rgba(246,255,102,1) 0%, rgba(118,165,175,1) 100%); /* TODO: Needs more tweaking */
     position: relative;
-    
+
     .header-text {
         position: absolute;
         top: 20%;
@@ -29,7 +29,14 @@ header {
         width: 100%;
         height: 10%;
         bottom: 0;
-        box-shadow: inset 0 -4px 4px #1C1C1C;
+        box-shadow: inset 0 -8px 4px #1C1C1C;
+    }
+
+    .cvPhoto {
+        position: absolute;
+        height: 60%;
+        bottom: 0;
+        right: 20vh;
     }
 }
 
@@ -53,6 +60,31 @@ main {
 
         li {
             padding: 0.5rem 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header {
+
+        .header-text {
+            top: 10%;
+            left: 0;
+            right: 0;
+            /* text-align: center; */
+            
+            h1 {
+                font-size: 4.5rem;
+                font-family: 'Allison';
+                font-weight: 100;
+                line-height: 1;
+            }
+        }
+        
+        .cvPhoto {
+            right: 0;
+            left: 0;
+            margin: 0 auto;
         }
     }
 }

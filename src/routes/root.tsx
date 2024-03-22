@@ -31,6 +31,7 @@ export default function Root() {
                 <h1>Monica Björk</h1>
                 <p>underrubrik</p>
             </div>
+            <img src="cv-photo.png" className="cvPhoto" />
             <div className="borderShadow"> </div>
         </header>
         
@@ -43,7 +44,9 @@ export default function Root() {
                     <li><Link to={`/connect`}>Kontakt</Link></li>
                 </ul>
             </nav>
+
             <Outlet />
+            
         </main>
       </>
     );

@@ -1,5 +1,4 @@
-// import React, { useEffect, useState , useRef } from "react";
-import { SetStateAction, useRef, useState, useEffect } from "react";
+import { SetStateAction, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import "./connect.css";
@@ -11,13 +10,7 @@ export default function Connect() {
     const [userEmail, setUserEmail] = useState<string>("");
     const [message, setMessage] = useState<string>("");
     const [submitDisabled, setSubmitDisabled] = useState<boolean>(false);
-    
-    // Debug
-    // useEffect(() => {
-    //     dialogRef.current!.show();
-    //     dialogRef.current!.close();
-    // });
-    
+ 
     const submitForm = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
         setSubmitDisabled(true);
@@ -55,11 +48,9 @@ export default function Connect() {
     const updateUserName = (event: { target: { value: SetStateAction<string>; }; }) => {
         setUserName(event.target.value);
     };
-
     const updateUserEmail = (event: { target: { value: SetStateAction<string>; }; }) => {
         setUserEmail(event.target.value);
     };
-
     const updateMessage = (event: { target: { value: SetStateAction<string>; }; }) => {
         setMessage(event.target.value);
     };
@@ -90,7 +81,7 @@ export default function Connect() {
                 </form>
 
                 <dialog ref={dialogRef} className="formSuccessDialog">
-                    <p>Tack för ditt meddelande {userName}! Jag svarar så fort jag kan, vilket bör vara inom ett par dagar.</p>
+                    <p>Tack för ditt meddelande {userName}! Jag svarar så fort jag kan.</p>
                 </dialog>
             </section>
         </article>
