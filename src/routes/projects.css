@@ -1,20 +1,23 @@
+
 .projectItem {
-    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 1rem;
+    
     margin-bottom: 5rem;
 
     img {
         min-width: 7rem;
         width: 90%;
         max-width: 20rem;
-        margin: 0 1rem;
         border-radius: 0.5rem;
     }
 
     .textWrapper {
-        min-width: 7rem;
+        /* min-width: 7rem; */
         max-width: 30rem;
 
         display: flex;

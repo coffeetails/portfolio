@@ -33,18 +33,42 @@ h1,h2,h3,h4,h5 {
 
 
 a {
-    text-decoration: wavy;
-    text-decoration-line: underline;
-    text-underline-offset: 6px;
-    transition: 0.5s;
-    padding: 0 5px;
+    position: relative;
+    /* text-decoration: wavy; */
+    /* text-decoration-line: underline; */
+    /* text-underline-offset: 6px; */
+    /* transition: 0.5s; */
+    /* display: inline; */
+    text-decoration: none;
+    width: fit-content;
     
+    &::after {
+        position: absolute;
+        content: ' ';
+        height: 0.5rem;
+        width: calc(100% + 0.5rem);
+        top: 1.3rem;
+        left: -0.25rem;
+		background: rgb(156, 156, 175);
+        transition: 0.5s;
+ 
+        --mask:
+            radial-gradient(3.5px at 50% calc(100% + 0px),#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) calc(50% - 6px) calc(50% - 2px + .5px)/12px 4px repeat-x,
+            radial-gradient(3.5px at 50% 0px,#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) 50% calc(50% + 2px)/12px 4px repeat-x;    
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
+    }
+
+    &:hover::after {
+        top: -0.4rem;
+    }
+   
     &:visited {
         color: #cacaca;
     }
-    &:hover {
+    /* &:hover {
         text-underline-offset: calc(-1rem - 4px);
-    }
+    } */
     &:active {
         border: 5px solid #a5e79c;
         border-radius: 2px;
@@ -65,12 +89,5 @@ a {
         display: inline-block;
         width: 100%;
         text-align: center;
-    }
-}
-
-.hidden {
-    display: none;
-    * {
-        display: none;
     }
 }
