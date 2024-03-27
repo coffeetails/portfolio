@@ -36,7 +36,7 @@ a {
     position: relative;
     text-decoration: none;
     width: fit-content;
-    transition: 0.5s;
+    transition: 0.2s;
     padding: 0 0.2rem;
     
     &::after {
@@ -47,7 +47,7 @@ a {
         top: 1.25rem;
         left: -0.25rem;
 		background: #cacaca;
-        transition: 0.5s;
+        transition: 0.2s;
  
         --mask:
             radial-gradient(3.5px at 50% calc(100% + 0px),#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) calc(50% - 6px) calc(50% - 2px + .5px)/12px 4px repeat-x,
@@ -62,7 +62,7 @@ a {
         width: calc(100% + 0.5rem);
         top: -0.4rem;
         left: -0.25rem;
-        transition: 0.5s;
+        transition: 0.2s;
 
         --mask:
             radial-gradient(3.5px at 50% 4.8px,#000 99%,#0000 101%) calc(50% - 6px) 0/12px 51% repeat-x,
@@ -82,8 +82,6 @@ a {
     &:active::before {
 		background: #cacaca;
         z-index: -1;
-        /* border: solid #cacaca; */
-        /* border-width: 7px 1px; */
     }
     &:active {
         color: #1C1C1C;
@@ -92,6 +90,13 @@ a {
     }
 }
 
+p {
+    padding: 1rem 0;
+}
+
+article {
+    padding-bottom: 10vh;
+}
 
 .error-page {
     width: fit-content;
