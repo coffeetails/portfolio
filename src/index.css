@@ -16,7 +16,7 @@
 
     color: #fafafa;
     font-family: "Nunito", sans-serif;
-    line-height: 1.7rem;
+    line-height: 1.8rem;
     letter-spacing: 0.08rem;
 }
 
@@ -34,22 +34,19 @@ h1,h2,h3,h4,h5 {
 
 a {
     position: relative;
-    /* text-decoration: wavy; */
-    /* text-decoration-line: underline; */
-    /* text-underline-offset: 6px; */
-    /* transition: 0.5s; */
-    /* display: inline; */
     text-decoration: none;
     width: fit-content;
+    transition: 0.5s;
+    padding: 0 0.2rem;
     
     &::after {
         position: absolute;
         content: ' ';
         height: 0.5rem;
         width: calc(100% + 0.5rem);
-        top: 1.3rem;
+        top: 1.25rem;
         left: -0.25rem;
-		background: rgb(156, 156, 175);
+		background: #cacaca;
         transition: 0.5s;
  
         --mask:
@@ -58,21 +55,40 @@ a {
         -webkit-mask: var(--mask);
         mask: var(--mask);
     }
-
-    &:hover::after {
+    &::before {
+        position: absolute;
+        content: ' ';
+        height: 2.4rem;
+        width: calc(100% + 0.5rem);
         top: -0.4rem;
+        left: -0.25rem;
+        transition: 0.5s;
+
+        --mask:
+            radial-gradient(3.5px at 50% 4.8px,#000 99%,#0000 101%) calc(50% - 6px) 0/12px 51% repeat-x,
+            radial-gradient(3.5px at 50% -1.8px,#0000 99%,#000 101%) 50% 3px/12px calc(51% - 3px) repeat-x,
+            radial-gradient(3.5px at 50% calc(100% - 4.8px),#000 99%,#0000 101%) calc(50% - 6px) 100%/12px 51% repeat-x,
+            radial-gradient(3.5px at 50% calc(100% + 1.8px),#0000 99%,#000 101%) 50% calc(100% - 3px)/12px calc(51% - 3px) repeat-x;
+        -webkit-mask: var(--mask);
+        mask: var(--mask);
     }
-   
+
     &:visited {
         color: #cacaca;
     }
-    /* &:hover {
-        text-underline-offset: calc(-1rem - 4px);
-    } */
+    &:hover::after {
+        top: -0.4rem;
+    }
+    &:active::before {
+		background: #cacaca;
+        z-index: -1;
+        /* border: solid #cacaca; */
+        /* border-width: 7px 1px; */
+    }
     &:active {
-        border: 5px solid #a5e79c;
-        border-radius: 2px;
-        text-underline-offset: calc(-1rem - 4px);
+        color: #1C1C1C;
+        font-weight: bold;
+        padding: 0;
     }
 }
 
