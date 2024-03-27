@@ -15,7 +15,7 @@ export default function Projects() {
         const projectKey = "project-" + i;
 
         return (
-            <article className="projectItem" key={projectKey}>
+            <section className="projectItem" key={projectKey}>
                 <img src={item.image} />
                 <div className="textWrapper">
                     <h2>{item.title}</h2>
@@ -23,7 +23,7 @@ export default function Projects() {
                     <Link to={item.livePage}>Se sidan live</Link>
                     <Link to={item.githubPage}>Github repo</Link>
                 </div>
-            </article>
+            </section>
         );
     });
 

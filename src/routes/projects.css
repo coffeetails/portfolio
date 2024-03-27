@@ -1,5 +1,7 @@
 
 .projectItem {
+    padding-bottom: 5rem;
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
