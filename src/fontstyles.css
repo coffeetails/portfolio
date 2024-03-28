@@ -33,7 +33,7 @@ a {
     width: fit-content;
     transition: 0.2s;
     padding: 0.35rem 0.5rem;
-    
+
     /* WAVE */
     &::after {
         position: absolute;
@@ -93,4 +93,13 @@ a {
 
 p {
     padding: 1rem 0;
+}
+
+ul {
+    padding-left: 1rem;
+    list-style-type: circle;
+    list-style-type: "☕";
+}
+li {
+    padding: 0.25rem 0.5rem;
 }
