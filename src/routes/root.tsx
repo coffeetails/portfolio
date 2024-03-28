@@ -59,7 +59,7 @@ export default function Root() {
         </header>
         
         <main>
-            <nav>
+            <nav className="mainmenu">
                 <ul>
                     <li><Link to={`/`}>Hem</Link></li>
                     <li><Link to={`/cv`} >CV</Link></li>

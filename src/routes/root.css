@@ -47,6 +47,10 @@ main {
     height: 100%;
     margin: 0 auto;
 
+}
+
+.mainmenu {
+
     ul {
         list-style: none;
         margin-top: 0.5rem;
@@ -56,7 +60,7 @@ main {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-
+        
         li {
             padding: 0.5rem 1rem;
         }

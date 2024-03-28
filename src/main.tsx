@@ -10,6 +10,7 @@ import CV from "./routes/cv";
 import Projects from "./routes/projects";
 import ErrorPage from './error-page';
 import "./index.css";
+import "./fontstyles.css";
 
 /* Easter egg ideas:
 - a cat appears on the screen every 10min when no interaction occurs
