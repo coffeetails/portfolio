@@ -20,8 +20,11 @@ export default function Projects() {
                 <div className="textWrapper">
                     <h2>{item.title}</h2>
                     <p>{parse(item.text)}</p>
-                    <Link to={item.livePage}>Se sidan live</Link>
-                    <Link to={item.githubPage}>Github repo</Link>
+
+                    <ul>
+                        <li><Link to={item.livePage}>Se sidan live</Link></li>
+                        <li><Link to={item.githubPage}>Github repo</Link></li>
+                    </ul>
                 </div>
             </section>
         );
