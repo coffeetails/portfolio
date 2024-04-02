@@ -40,7 +40,7 @@ export default function Root() {
     useLayoutEffect(() => {
         const reducedHeight = 0.8;
         const mediaQueryBreakpoint = 800;
-        // console.log("header", headerElem.current!.offsetWidth + " x " + headerElem.current!.offsetHeight);
+        console.log("header", headerElem.current!.offsetWidth + " x " + headerElem.current!.offsetHeight);
         console.log("window", windowSize);
         
         
@@ -95,18 +95,17 @@ export default function Root() {
             <div className="borderShadow"> </div>
         </header>
         
+        <nav className="mainmenu">
+            <ul>
+                <li><Link ref={homeLink} to={`/`}>Hem</Link></li>
+                <li><Link ref={cvLink} to={`/cv`} >CV</Link></li>
+                <li><Link ref={projectsLink} to={`/projects`}>Projekt</Link></li>
+                <li><Link ref={connectLink} to={`/connect`}>Kontakt</Link></li>
+            </ul>
+        </nav>
+        
         <main>
-            <nav className="mainmenu">
-                <ul>
-                    <li><Link ref={homeLink} to={`/`}>Hem</Link></li>
-                    <li><Link ref={cvLink} to={`/cv`} >CV</Link></li>
-                    <li><Link ref={projectsLink} to={`/projects`}>Projekt</Link></li>
-                    <li><Link ref={connectLink} to={`/connect`}>Kontakt</Link></li>
-                </ul>
-            </nav>
-
             <Outlet />
-            
         </main>
       </>
     );

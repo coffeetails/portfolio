@@ -47,7 +47,7 @@ header {
 
 
 main {
-    width: 95%;
+    width: 85%;
     max-width: 60rem;
     height: 100%;
     margin: 0 auto;
@@ -55,6 +55,7 @@ main {
 }
 
 .mainmenu {
+    padding: 0 0.5rem;
 
     ul {
         list-style: none;

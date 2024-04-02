@@ -10,16 +10,17 @@
 
     img {
         min-width: 7rem;
-        width: 90%;
-        max-width: 20rem;
+        width: 100%;
+        max-width: 25rem;
         border-radius: 0.5rem;
     }
 
     .textWrapper {
-        max-width: 30rem;
+        max-width: 25rem;
 
         ul {
             list-style-type: none;
+            padding: 0;
             
             li {
                 padding: 0.5rem 0;

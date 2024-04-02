@@ -18,3 +18,11 @@
         }
     }
 }
+
+@media screen and (max-width: 800px) {
+    .cvCategory {
+        h2 {
+            text-align: left;
+        }
+    }
+}
