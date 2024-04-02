@@ -33,6 +33,7 @@ a {
     width: fit-content;
     transition: 0.2s;
     padding: 0.35rem 0.5rem;
+    font-weight: bold;
 
     /* WAVE */
     &::after {
@@ -88,6 +89,40 @@ a {
     }
     &:active {
         color: #1C1C1C;
+    }
+}
+
+.currentPage {
+    color: #1C1C1C;
+    z-index: 5;
+
+    &:visited {
+        color: #1C1C1C;
+    }
+    /* BACKGROUND */
+    &::before {
+        position: absolute;
+        content: ' ';
+        height: 2.1rem;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: 0.2s;
+        background: #cacaca;
+        z-index: -1;
+
+        --mask-wavy-background:
+            radial-gradient(3.5px at 50% 4.8px,#000 99%,#0000 101%) calc(50% - 6px) 0/12px 51% repeat-x,
+            radial-gradient(3.5px at 50% -1.8px,#0000 99%,#000 101%) 50% 3px/12px calc(51% - 3px) repeat-x,
+            radial-gradient(3.5px at 50% calc(100% - 4.8px),#000 99%,#0000 101%) calc(50% - 6px) 100%/12px 51% repeat-x,
+            radial-gradient(3.5px at 50% calc(100% + 1.8px),#0000 99%,#000 101%) 50% calc(100% - 3px)/12px calc(51% - 3px) repeat-x;
+        -webkit-mask: var(--mask-wavy-background);
+        mask: var(--mask-wavy-background);
+    }
+
+    /* WAVE */
+    &::after {
+        top: 0;
     }
 }
 
