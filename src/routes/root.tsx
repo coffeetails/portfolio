@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
 // <Outlet /> is where the content will show
-import { useLayoutEffect, useState, useRef } from "react";
+import { useLayoutEffect, useEffect, useState, useRef } from "react";
 
 import './root.css';
 
@@ -17,10 +17,38 @@ export default function Root() {
     const location = useLocation();
     let subtitle = "";
 
+    
+    function useWindowSize() {
+        const [size, setSize] = useState([0, 0]);
+        useLayoutEffect(() => {
+        function updateSize() {
+            setSize([window.innerWidth, window.innerHeight]);
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => window.removeEventListener('resize', updateSize);
+        }, []);
+        return size;
+    } // https://stackoverflow.com/questions/19014250/rerender-view-on-browser-resize-with-react
+    let windowSize = useWindowSize();
+    
     useLayoutEffect(() => {
-        setHeight(headerElem.current!.offsetHeight)
-        setWidth(headerElem.current!.offsetWidth);
-        setViewBoxValue("0 0 " + width + " " + height);
+        const reducedHeight = 0.8;
+        const mediaQueryBreakpoint = 800;
+        // console.log("header", headerElem.current!.offsetWidth + " x " + headerElem.current!.offsetHeight);
+        // console.log("window", windowSize);
+        
+        
+        if(headerElem.current!.offsetWidth < mediaQueryBreakpoint) {
+            setHeight(headerElem.current!.offsetHeight*reducedHeight);
+            setWidth(headerElem.current!.offsetWidth);
+            setViewBoxValue("0 0 " + width + " " + (height*reducedHeight));
+        } else {
+            setHeight(headerElem.current!.offsetHeight);
+            setWidth(headerElem.current!.offsetWidth);
+            setViewBoxValue("0 0 " + width + " " + height);
+        }
+
     });
 
     switch (location.pathname) {
@@ -52,7 +80,7 @@ export default function Root() {
             <WaveThree width={width} height={height} viewBoxValue={viewBoxValue} />
             <div className="header-text">
                 <h1>Monica Björk</h1>
-                <p>{subtitle}</p>
+                {/* <p>{subtitle}</p> */}
             </div>
             <img src="cv-photo.png" className="cvPhoto" />
             <div className="borderShadow"> </div>
