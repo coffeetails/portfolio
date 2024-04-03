@@ -1,6 +1,6 @@
-# My portolio-to-be
+# My portolio
 
-This is the new portfolio. Still not done yet. It is made to look like my resume.
+This is the new portfolio. It is made to look like my resume.
 
 ## Some resources I've used
 
