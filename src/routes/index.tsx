@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import TechStack from "./components/techstack";
 
 export default function Index() {
   
@@ -9,6 +10,8 @@ export default function Index() {
 
     return (
         <article>
+            <TechStack />
+            
             <h2>Hejsan, Monica här!</h2>
             <p>Jag är en handarbetande frontendutvecklare och kattägare i Arvika. Från mig kan du förvänta dig:</p>
             <ul>
