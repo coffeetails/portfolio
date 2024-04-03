@@ -1,0 +1,141 @@
+@font-face {
+    font-family: "Nunito";
+    src: url(/Nunito/Nunito-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: "Allison";
+    src: url(/Allison/Allison-Regular.ttf);
+}
+/* Should I remove the static versions of Nunito? *\
+\* Do I need the italic version?                  */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    color: #fafafa;
+    font-family: "Nunito", sans-serif;
+    line-height: 1.8rem;
+    letter-spacing: 0.08rem;
+}
+
+h1,h2,h3,h4,h5 {
+    line-height: 1.7em;
+    letter-spacing: normal;
+    /* letter-spacing: 0.08em; */
+}
+
+
+a {
+    position: relative;
+    text-decoration: none;
+    width: fit-content;
+    transition: 0.2s;
+    padding: 0.35rem 0.25rem;
+    margin: 0 -0.25rem;
+    font-weight: bold;
+
+    /* WAVE */
+    &::after {
+        position: absolute;
+        content: ' ';
+        height: 0.5rem;
+        width: 100%;
+        top: 1.7rem;
+        left: 0;
+		background: #cacaca;
+        transition: 0.2s;
+
+        --mask-wavy-underline:
+            radial-gradient(3.5px at 50% calc(100% + 0px),#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) calc(50% - 6px) calc(50% - 2px + .5px)/12px 4px repeat-x,
+            radial-gradient(3.5px at 50% 0px,#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) 50% calc(50% + 2px)/12px 4px repeat-x;    
+        -webkit-mask: var(--mask-wavy-underline);
+        mask: var(--mask-wavy-underline);
+    }
+    /* BACKGROUND */
+    &::before {
+        position: absolute;
+        content: ' ';
+        height: 2.1rem;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: 0.2s;
+
+        --mask-wavy-background:
+            radial-gradient(3.5px at 50% 4.8px,#000 99%,#0000 101%) calc(50% - 6px) 0/12px 51% repeat-x,
+            radial-gradient(3.5px at 50% -1.8px,#0000 99%,#000 101%) 50% 3px/12px calc(51% - 3px) repeat-x,
+            radial-gradient(3.5px at 50% calc(100% - 4.8px),#000 99%,#0000 101%) calc(50% - 6px) 100%/12px 51% repeat-x,
+            radial-gradient(3.5px at 50% calc(100% + 1.8px),#0000 99%,#000 101%) 50% calc(100% - 3px)/12px calc(51% - 3px) repeat-x;
+        -webkit-mask: var(--mask-wavy-background);
+        mask: var(--mask-wavy-background);
+    }
+
+    &:visited {
+        color: #cacaca;
+    }
+    /* WAVE */
+    &:hover::after {
+        top: 0;
+    }
+    /* BACKGROUND */
+    &:active::before {
+		background: #cacaca;
+        z-index: -1;
+    }
+    /* WAVE */
+    &:active::after {
+        top: 0;
+    }
+    &:active {
+        color: #1C1C1C;
+    }
+}
+
+.currentPage {
+    color: #1C1C1C;
+    z-index: 5;
+
+    &:visited {
+        color: #1C1C1C;
+    }
+    /* BACKGROUND */
+    &::before {
+        position: absolute;
+        content: ' ';
+        height: 2.1rem;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: 0.2s;
+        background: #cacaca;
+        z-index: -1;
+
+        --mask-wavy-background:
+            radial-gradient(3.5px at 50% 4.8px,#000 99%,#0000 101%) calc(50% - 6px) 0/12px 51% repeat-x,
+            radial-gradient(3.5px at 50% -1.8px,#0000 99%,#000 101%) 50% 3px/12px calc(51% - 3px) repeat-x,
+            radial-gradient(3.5px at 50% calc(100% - 4.8px),#000 99%,#0000 101%) calc(50% - 6px) 100%/12px 51% repeat-x,
+            radial-gradient(3.5px at 50% calc(100% + 1.8px),#0000 99%,#000 101%) 50% calc(100% - 3px)/12px calc(51% - 3px) repeat-x;
+        -webkit-mask: var(--mask-wavy-background);
+        mask: var(--mask-wavy-background);
+    }
+
+    /* WAVE */
+    &::after {
+        top: 0;
+    }
+}
+
+p {
+    padding: 1rem 0;
+}
+
+ul {
+    padding-left: 1rem;
+    list-style-type: circle;
+    list-style-type: "☕";
+}
+li {
+    padding: 0.25rem 0.5rem;
+}
