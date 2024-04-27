@@ -1,4 +1,8 @@
 .techstack-canvas {
-    position: absolute;
-    right: 0;
+    /* position: absolute; */
+    /* right: 0; */
+    background-color: gray;
+    align-self: flex-end;
+    margin-right: -4.5rem;
+    margin-bottom: -6rem;
 }
