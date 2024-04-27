@@ -1,3 +1,14 @@
+.cvPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.cvSide {
+    margin-left: 0.25rem;
+    border-left: 0.25rem solid black;
+    padding-left: 0.25rem;
+}
+
 .cvCategory {
     margin: 3rem 0;
     
@@ -20,9 +31,20 @@
 }
 
 @media screen and (max-width: 800px) {
+    .cvPage {
+        display: flex;
+        flex-direction: column;
+    }
+
     .cvCategory {
         h2 {
             text-align: left;
         }
+    }
+
+    .cvSide {
+        margin-left: 0;
+        border-left: 0;
+        padding-left: 0;
     }
 }
