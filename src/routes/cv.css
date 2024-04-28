@@ -1,6 +1,11 @@
 .cvPage {
     display: flex;
     flex-direction: row;
+    
+    h2 {
+        text-align: center;
+        margin-top: 3rem;
+    }
 }
 
 .cvSide {
@@ -10,11 +15,6 @@
 }
 
 .cvCategory {
-    margin: 3rem 0;
-    
-    h2 {
-        text-align: center;
-    }
     
     .cvItem {
         font-size: 1.1rem;
