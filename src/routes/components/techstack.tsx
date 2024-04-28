@@ -9,13 +9,13 @@ export default function TechStack() {
     
     
     useEffect(() => {
-        const techsOld: string[] = ["HTML","CSS", "SASS", "Javascript", "Typescript", "Figma", "Node.js", "React", "Git / github", "Docker", "C#" ];
-        const techs: any = [ ["HTML", 30],["CSS",30],["SASS",90],["Javascript",40],["Typescript",60],["Figma",40],["Node.js",40],["React",60],["Git / github",80],["Docker",80],["C#",100] ];
+        const techs: any = [ ["HTML", 100],["CSS", 100],["SASS", 80],["Javascript", 90],["Typescript",80],["Figma",50],["Node.js",40],["React",30],["Git / github",30],["Docker",20],["C#",20] ];
         const gap: number = 30;
         const backgroundHeight: number = 18;
         const backgroundRadius: number = backgroundHeight/2;
         let textPosition: number[] = [140,180];
-        let backgoundPosition: number[] = [130,165];
+        // let backgoundPosition: number[] = [130,165];
+        let backgoundPosition: number[] = [0,165];
 
         const canvas = canvasRef.current;
         if(!canvas) {
@@ -42,14 +42,15 @@ export default function TechStack() {
 
         
         // === STACK BACKGROUND === //
+        // Color
         let gradient = context.createLinearGradient(0, 130, 0, backgoundPosition[1]+(gap*techs.length));
         gradient.addColorStop(0.4, "#38761D");
         gradient.addColorStop(0.8, "#0C343D");
         context.fillStyle = gradient;
 
-        // for(let i = 0; i < techs.length; i++) {
+        // Lines
         for(let tech of techs) {
-            context.fillRect(tech[1], backgoundPosition[1], canvasWidth, backgroundHeight);
+            context.fillRect(0, backgoundPosition[1], tech[1], backgroundHeight);
 
             context.beginPath();
             context.arc(tech[1], backgoundPosition[1]+backgroundRadius, backgroundRadius, 0, 2 * Math.PI);
