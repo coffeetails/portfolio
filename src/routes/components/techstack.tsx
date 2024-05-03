@@ -3,29 +3,27 @@ import "./techstack.css";
 
 export default function TechStack() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const canvasWidth = 300;
-    const canvasHeight = 550;
-    
-    
+    const canvasWidth = 350*2;
+    const canvasHeight = 550*2;
     
     useEffect(() => {
         const techs: {label: string, x: number}[] = [ 
-            {label: "HTML",         x: 115},
-            {label: "CSS",          x: 115},
-            {label: "SASS",         x: 85},
-            {label: "Javascript",   x: 95},
-            {label: "Typescript",   x: 85},
-            {label: "Figma",        x: 95},
-            {label: "Node.js",      x: 90},
-            {label: "React",        x: 90},
-            {label: "Git / github", x: 65},
-            {label: "Docker",       x: 65},
-            {label: "C#",           x: 55} ];
-        const gap: number = 30;
-        const backgroundHeight: number = 18;
+            {label: "HTML",         x: 145*2},
+            {label: "CSS",          x: 145*2},
+            {label: "SASS",         x: 115*2},
+            {label: "Javascript",   x: 125*2},
+            {label: "Typescript",   x: 115*2},
+            {label: "Figma",        x: 125*2},
+            {label: "React",        x: 110*2},
+            {label: "Node.js",      x: 110*2},
+            {label: "Git / github", x: 95*2},
+            {label: "Docker",       x: 95*2},
+            {label: "C#",           x: 85*2} ];
+        const gap: number = 30*2;
+        const backgroundHeight: number = 18*2;
         const backgroundRadius: number = backgroundHeight/2;
-        let textPosition: {x: number, y: number}      = {x: 140, y: 180};
-        let backgoundPosition: {x: number, y: number} = {x: 0,   y: 165};
+        let textPosition: {x: number, y: number}      = {x: 170*2, y: 130*2};
+        let backgoundPosition: {x: number, y: number} = {x: 30*2,   y: 115*2};
 
         const canvas = canvasRef.current;
         if(!canvas) {
@@ -38,16 +36,15 @@ export default function TechStack() {
 
         // === TEXT === //
         context.fillStyle = "#fafafa";
+        // context.font = '1rem "Nunito"';
         context.font = '2rem "Nunito"';
-        context.fillText("Techstack",               10,  50);
-        context.font = '1rem "Nunito"';
-        context.fillText("Grundläggande kunskaper", 30,  80);
-        context.fillText("Goda kunskaper",          60, 110);
-        context.fillText("Mycket goda kunskaper",   90, 140);
+        context.fillText("Grundläggande kunskaper", 60*2,  30*2);
+        context.fillText("Goda kunskaper",          90*2,  60*2);
+        context.fillText("Mycket goda kunskaper",   120*2, 90*2);
 
         for(let tech of techs) {
-            context.font = '1rem "Nunito"';
-            context.fillStyle = "#fafafa";
+            // context.font = '1rem "Nunito"';
+            // context.fillStyle = "#fafafa";
             context.fillText(tech.label, textPosition.x, textPosition.y);
             textPosition.y += gap;
         };
@@ -55,17 +52,17 @@ export default function TechStack() {
         // === LEVEL OF KNOWLEDGE LINES === //
         context.beginPath();
         
-        context.moveTo(35, canvasHeight);
-        context.lineTo(35, 85);
-        context.lineTo(230, 85);
+        context.moveTo(65*2, canvasHeight);
+        context.lineTo(65*2, 35*2);
+        context.lineTo(265*2, 35*2);
         
-        context.moveTo(65, canvasHeight);
-        context.lineTo(65, 115);
-        context.lineTo(250, 115);
+        context.moveTo(95*2, canvasHeight);
+        context.lineTo(95*2, 65*2);
+        context.lineTo(305*2, 65*2);
         
-        context.moveTo(95, canvasHeight);
-        context.lineTo(95, 145);
-        context.lineTo(270, 145);
+        context.moveTo(125*2, canvasHeight);
+        context.lineTo(125*2, 95*2);
+        context.lineTo(325*2, 95*2);
         
         context.strokeStyle = "#fafafa";
         context.stroke();
@@ -76,17 +73,25 @@ export default function TechStack() {
         gradient.addColorStop(0.8, "#0C343D");
         context.fillStyle = gradient;
 
-
+        console.log("Drawing stack: ");
         for(let tech of techs) {
+            console.log(tech.label);
+
             // Background
             context.beginPath();
             context.roundRect(-backgroundRadius, backgoundPosition.y, tech.x, backgroundHeight, backgroundRadius);
             context.fill();
             
+            // Outer shadow
+            context.shadowOffsetX = 1;
+            context.shadowOffsetY = 2;
+            context.shadowBlur = 3;
+            context.shadowColor = '#000';
+
             // Inner shadow
-            context.strokeStyle = "#000";
-            
             context.save();
+            
+            context.strokeStyle = "#000";
             context.beginPath();
             context.roundRect(-backgroundRadius, backgoundPosition.y, tech.x, backgroundHeight, backgroundRadius);
             context.stroke();
@@ -103,21 +108,17 @@ export default function TechStack() {
             
             context.restore();
 
-            // Outer shadow
-            context.shadowOffsetX = 1;
-            context.shadowOffsetY = 2;
-            context.shadowBlur = 3;
-            context.shadowColor = '#000';
 
             backgoundPosition.y += gap;
         }
-        backgoundPosition.y = -(gap*techs.length); // Reset variable
- 
-    }, []);
+        backgoundPosition.y -= (gap*techs.length); // Reset variable
+
+    }, [canvasRef, canvasWidth, canvasHeight]);
 
     return (
         <>
-            <canvas ref={canvasRef} width={canvasWidth} height={canvasHeight} className="techstack-canvas"></canvas>
+            <h2>TechStack</h2>
+            <canvas ref={canvasRef} width={canvasWidth} height={canvasHeight} style={{width: "350px", height: "550px"}} className="techstack-canvas"></canvas>
             <span className="canvasAltText">alt text to the canvas</span>
         </>
     );

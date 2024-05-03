@@ -5,7 +5,7 @@ header {
     height: 50vw;
     max-height: 45vh;
     background-color: #76A5AF;
-    background-image: radial-gradient(circle at 50% 125%, rgba(246,255,102,1) 0%, rgba(118,165,175,1) 100%); /* TODO: Needs more tweaking */
+    background-image: radial-gradient(circle at 50% 125%, rgba(246,255,102,1) 0%, rgba(118,165,175,1) 100%);
     position: relative;
 
     .header-text {

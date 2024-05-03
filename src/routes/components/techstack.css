@@ -3,9 +3,10 @@
 }
 
 .canvasAltText {
-    opacity: 0.01;
+    opacity: 0.05;
     font-size: 1px;
     line-height: 0;
+    display: block;
 }
 
 @media screen and (max-width: 800px) {
