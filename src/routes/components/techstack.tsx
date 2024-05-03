@@ -4,8 +4,8 @@ import "./techstack.css";
 export default function TechStack() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const canvasWidth = 350*2;
-    const canvasHeight = 550*2;
-    
+    const canvasHeight = 500*2;
+
     useEffect(() => {
         const techs: {label: string, x: number}[] = [ 
             {label: "HTML",         x: 145*2},
@@ -22,9 +22,9 @@ export default function TechStack() {
         const gap: number = 30*2;
         const backgroundHeight: number = 18*2;
         const backgroundRadius: number = backgroundHeight/2;
-        let textPosition: {x: number, y: number}      = {x: 170*2, y: 130*2};
+        let textPosition: {x: number, y: number}      = {x: 170*2,  y: 130*2};
         let backgoundPosition: {x: number, y: number} = {x: 30*2,   y: 115*2};
-
+        
         const canvas = canvasRef.current;
         if(!canvas) {
             return;
@@ -33,7 +33,7 @@ export default function TechStack() {
         if(!context) {
             return;
         }
-
+        
         // === TEXT === //
         context.fillStyle = "#fafafa";
         // context.font = '1rem "Nunito"';
@@ -43,8 +43,6 @@ export default function TechStack() {
         context.fillText("Mycket goda kunskaper",   120*2, 90*2);
 
         for(let tech of techs) {
-            // context.font = '1rem "Nunito"';
-            // context.fillStyle = "#fafafa";
             context.fillText(tech.label, textPosition.x, textPosition.y);
             textPosition.y += gap;
         };
@@ -75,7 +73,6 @@ export default function TechStack() {
 
         console.log("Drawing stack: ");
         for(let tech of techs) {
-            console.log(tech.label);
 
             // Background
             context.beginPath();
@@ -118,7 +115,7 @@ export default function TechStack() {
     return (
         <>
             <h2>TechStack</h2>
-            <canvas ref={canvasRef} width={canvasWidth} height={canvasHeight} style={{width: "350px", height: "550px"}} className="techstack-canvas"></canvas>
+            <canvas ref={canvasRef} width={canvasWidth} height={canvasHeight} style={{width: "350px", height: "500px"}} className="techstack-canvas"></canvas>
             <span className="canvasAltText">alt text to the canvas</span>
         </>
     );
