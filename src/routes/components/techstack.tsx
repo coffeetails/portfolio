@@ -3,28 +3,28 @@ import "./techstack.css";
 
 export default function TechStack() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const canvasWidth = 350*2;
-    const canvasHeight = 500*2;
+    const canvasWidth = 700;
+    const canvasHeight = 1000;
 
     // useEffect(() => {
     document.fonts.load("2rem Nunito").then(() => {
         const techs: {label: string, x: number}[] = [ 
-            {label: "HTML",         x: 145*2},
-            {label: "CSS",          x: 145*2},
-            {label: "SASS",         x: 115*2},
-            {label: "Javascript",   x: 125*2},
-            {label: "Typescript",   x: 115*2},
-            {label: "Figma",        x: 125*2},
-            {label: "React",        x: 110*2},
-            {label: "Node.js",      x: 110*2},
-            {label: "Git / github", x: 95*2},
-            {label: "Docker",       x: 95*2},
-            {label: "C#",           x: 85*2} ];
-        const gap: number = 30*2;
-        const backgroundHeight: number = 18*2;
+            {label: "HTML",         x: 290},
+            {label: "CSS",          x: 290},
+            {label: "SASS",         x: 230},
+            {label: "Javascript",   x: 250},
+            {label: "Typescript",   x: 230},
+            {label: "Figma",        x: 250},
+            {label: "React",        x: 220},
+            {label: "Node.js",      x: 220},
+            {label: "Git / github", x: 190},
+            {label: "Docker",       x: 190},
+            {label: "C#",           x: 170} ];
+        const gap: number = 60;
+        const backgroundHeight: number = 36;
         const backgroundRadius: number = backgroundHeight/2;
-        let textPosition: {x: number, y: number}  = {x: 170*2, y: 130*2};
-        let stackPosition: {x: number, y: number} = {x: 30*2, y: 115*2};
+        let textPosition: {x: number, y: number}  = {x: 340, y: 260};
+        let stackPosition: {x: number, y: number} = {x: 60, y: 230};
         
         const canvas = canvasRef.current;
         if(!canvas) {
@@ -38,9 +38,9 @@ export default function TechStack() {
         // === TEXT === //
         context.fillStyle = "#fafafa";
         context.font = '2rem "Nunito"';
-        context.fillText("Grundläggande kunskaper", 60*2,  30*2);
-        context.fillText("Goda kunskaper",          90*2,  60*2);
-        context.fillText("Mycket goda kunskaper",   120*2, 90*2);
+        context.fillText("Grundläggande kunskaper", 120, 60);
+        context.fillText("Goda kunskaper",          180, 120);
+        context.fillText("Mycket goda kunskaper",   240, 180);
 
         for(let tech of techs) {
             context.fillText(tech.label, textPosition.x, textPosition.y);
@@ -50,17 +50,17 @@ export default function TechStack() {
         // === LEVEL OF KNOWLEDGE LINES === //
         context.beginPath();
         
-        context.moveTo(65*2, canvasHeight);
-        context.lineTo(65*2, 35*2);
-        context.lineTo(265*2, 35*2);
+        context.moveTo(130, canvasHeight);
+        context.lineTo(130, 70);
+        context.lineTo(530, 70);
         
-        context.moveTo(95*2, canvasHeight);
-        context.lineTo(95*2, 65*2);
-        context.lineTo(305*2, 65*2);
+        context.moveTo(190, canvasHeight);
+        context.lineTo(190, 130);
+        context.lineTo(610, 130);
         
-        context.moveTo(125*2, canvasHeight);
-        context.lineTo(125*2, 95*2);
-        context.lineTo(325*2, 95*2);
+        context.moveTo(250, canvasHeight);
+        context.lineTo(250, 190);
+        context.lineTo(650, 190);
         
         context.strokeStyle = "#fafafa";
         context.stroke();
