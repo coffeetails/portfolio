@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import "./techstack.css";
 
 export default function TechStack() {
@@ -6,7 +6,8 @@ export default function TechStack() {
     const canvasWidth = 350*2;
     const canvasHeight = 500*2;
 
-    useEffect(() => {
+    // useEffect(() => {
+    document.fonts.load("2rem Nunito").then(() => {
         const techs: {label: string, x: number}[] = [ 
             {label: "HTML",         x: 145*2},
             {label: "CSS",          x: 145*2},
@@ -22,8 +23,8 @@ export default function TechStack() {
         const gap: number = 30*2;
         const backgroundHeight: number = 18*2;
         const backgroundRadius: number = backgroundHeight/2;
-        let textPosition: {x: number, y: number}      = {x: 170*2,  y: 130*2};
-        let backgoundPosition: {x: number, y: number} = {x: 30*2,   y: 115*2};
+        let textPosition: {x: number, y: number}  = {x: 170*2, y: 130*2};
+        let stackPosition: {x: number, y: number} = {x: 30*2, y: 115*2};
         
         const canvas = canvasRef.current;
         if(!canvas) {
@@ -36,7 +37,6 @@ export default function TechStack() {
         
         // === TEXT === //
         context.fillStyle = "#fafafa";
-        // context.font = '1rem "Nunito"';
         context.font = '2rem "Nunito"';
         context.fillText("Grundläggande kunskaper", 60*2,  30*2);
         context.fillText("Goda kunskaper",          90*2,  60*2);
@@ -66,7 +66,7 @@ export default function TechStack() {
         context.stroke();
         
         // === STACKS & STACK BACKGROUND === //
-        let gradient = context.createLinearGradient(0, 130, 0, backgoundPosition.y+(gap*techs.length));
+        let gradient = context.createLinearGradient(0, stackPosition.y/2, 0, stackPosition.y+(gap*techs.length));
         gradient.addColorStop(0.4, "#38761D");
         gradient.addColorStop(0.8, "#0C343D");
         context.fillStyle = gradient;
@@ -76,7 +76,7 @@ export default function TechStack() {
 
             // Background
             context.beginPath();
-            context.roundRect(-backgroundRadius, backgoundPosition.y, tech.x, backgroundHeight, backgroundRadius);
+            context.roundRect(-backgroundRadius, stackPosition.y, tech.x, backgroundHeight, backgroundRadius);
             context.fill();
             
             // Outer shadow
@@ -90,7 +90,7 @@ export default function TechStack() {
             
             context.strokeStyle = "#000";
             context.beginPath();
-            context.roundRect(-backgroundRadius, backgoundPosition.y, tech.x, backgroundHeight, backgroundRadius);
+            context.roundRect(-backgroundRadius, stackPosition.y, tech.x, backgroundHeight, backgroundRadius);
             context.stroke();
             context.clip();
             
@@ -106,11 +106,11 @@ export default function TechStack() {
             context.restore();
 
 
-            backgoundPosition.y += gap;
+            stackPosition.y += gap;
         }
-        backgoundPosition.y -= (gap*techs.length); // Reset variable
-
-    }, [canvasRef, canvasWidth, canvasHeight]);
+        stackPosition.y -= (gap*techs.length); // Reset variable
+    });
+    // }, [canvasRef, canvasWidth, canvasHeight, ]);
 
     return (
         <>
