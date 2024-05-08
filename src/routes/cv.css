@@ -1,9 +1,20 @@
-.cvCategory {
-    margin: 3rem 0;
+.cvPage {
+    display: flex;
+    flex-direction: row;
     
     h2 {
         text-align: center;
+        margin-top: 3rem;
     }
+}
+
+.cvSide {
+    margin-left: 0.25rem;
+    border-left: 0.25rem solid #dfdfdf;
+    padding-left: 0.25rem;
+}
+
+.cvCategory {
     
     .cvItem {
         font-size: 1.1rem;
@@ -20,9 +31,20 @@
 }
 
 @media screen and (max-width: 800px) {
+    .cvPage {
+        display: flex;
+        flex-direction: column;
+    }
+
     .cvCategory {
         h2 {
             text-align: left;
         }
+    }
+
+    .cvSide {
+        margin-left: 0;
+        border-left: 0;
+        padding-left: 0;
     }
 }

@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import parse from "html-react-parser";
 
+import TechStack from "./components/techstack";
 import cvData from "../data/cv.json";
 import "./cv.css";
-// import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
+
 
 export default function CV() {
 
@@ -41,8 +42,25 @@ export default function CV() {
     });
 
     return (
-        <article>
-            {cvDataDisplay}
+        <article className="cvPage">
+            <section>
+                {cvDataDisplay}
+            </section>
+            <section className="cvSide">
+                <TechStack />
+
+                <h2>Språkkunskaper</h2>
+                <p>Svenska: Modersmål.</p>
+                <p>Engelska: Goda kunskaper.</p>
+                <p>Norska: Grundläggande läs- och </p>
+                hörförståelse.
+
+                <h2>Övriga meriter</h2>
+                <p>B-körkort</p>
+                <p>Klassrepresentant och deltagare i ledningsgruppen för Frontend-utbildningen, 2021-2023</p>
+                <p>Admin på rollspels-server för SPRP i GTA5, 2017-2019</p>
+                <p>Vattengympainstruktör för Korpen i Arvika, 2016</p>
+            </section>
         </article>
     );
 }

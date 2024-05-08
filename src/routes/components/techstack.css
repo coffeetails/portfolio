@@ -1,0 +1,17 @@
+.techstack-canvas {
+    margin-left: -0.25rem;
+}
+
+.canvasAltText {
+    opacity: 0;
+    font-size: 5px;
+    line-height: 0%;
+    margin-top: -5rem;
+    display: block;
+}
+
+@media screen and (max-width: 800px) {
+    .techstack-canvas {
+        margin-left: -9%;
+    }
+}

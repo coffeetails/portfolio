@@ -4,9 +4,9 @@ import { useLayoutEffect, useState, useRef } from "react";
 
 import './root.css';
 
-import WaveOne from './waves/waveOne';
-import WaveTwo from './waves/waveTwo';
-import WaveThree from './waves/waveThree';
+import WaveOne from './components/waveOne';
+import WaveTwo from './components/waveTwo';
+import WaveThree from './components/waveThree';
 
 
 export default function Root() {
