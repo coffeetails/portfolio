@@ -116,7 +116,7 @@ export default function TechStack() {
         <>
             <h2>TechStack</h2>
             <canvas ref={canvasRef} width={canvasWidth} height={canvasHeight} style={{width: "350px", height: "500px"}} className="techstack-canvas"></canvas>
-            <span className="canvasAltText">alt text to the canvas</span>
+            <span className="canvasAltText">Mycket goda kunskaper: HTML, CSS <br/>Goda kunskaper: SASS, JavaScript, TypeScript, Figma, React, Node.js <br/>Grundläggande kunskaper: Git/Github, Docker C#</span>
         </>
     );
 }

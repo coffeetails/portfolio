@@ -3,9 +3,10 @@
 }
 
 .canvasAltText {
-    opacity: 0.05;
-    font-size: 1px;
-    line-height: 0;
+    opacity: 0;
+    font-size: 5px;
+    line-height: 0%;
+    margin-top: -5rem;
     display: block;
 }
 
