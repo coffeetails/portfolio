@@ -44,12 +44,12 @@ a {
         width: 100%;
         top: 1.7rem;
         left: 0;
-		background: #cacaca;
+        background: #cacaca;
         transition: 0.2s;
 
         --mask-wavy-underline:
             radial-gradient(3.5px at 50% calc(100% + 0px),#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) calc(50% - 6px) calc(50% - 2px + .5px)/12px 4px repeat-x,
-            radial-gradient(3.5px at 50% 0px,#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) 50% calc(50% + 2px)/12px 4px repeat-x;    
+            radial-gradient(3.5px at 50% 0px,#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) 50% calc(50% + 2px)/12px 4px repeat-x;
         -webkit-mask: var(--mask-wavy-underline);
         mask: var(--mask-wavy-underline);
     }
@@ -76,8 +76,10 @@ a {
         color: #cacaca;
     }
     /* WAVE */
-    &:hover::after {
-        top: 0;
+    @media (hover: hover) {
+        &:hover::after {
+            top: 0;
+        }
     }
     /* BACKGROUND */
     &:active::before {

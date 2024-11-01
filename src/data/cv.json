@@ -34,7 +34,7 @@
                 "end": "2023-02"
             },
             "location": "ZoCom, distans",
-            "description": "Byggde en webbsida för att locka nya studerande till utbildningarna, skriven i typescript och SCSS. Gjord med React och Firebase som backend. <a href=\"https://plugga-it.se/\" class=\"link\">plugga-it.se</a>"
+            "description": "Byggde en webbsida för att locka nya studerande till utbildningarna, skriven i typescript och SCSS. Gjord med React och Firebase som backend. <br/> <a href=\"https://plugga-it.se/\" class=\"link\">plugga-it.se</a>"
         },{
             "title": "Apputvecklare",
             "time": {

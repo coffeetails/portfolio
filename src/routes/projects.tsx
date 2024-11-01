@@ -14,6 +14,10 @@ export default function Projects() {
     const projectsDataDisplay = projectsData.map((item, i) => {
         const projectKey = "project-" + i;
 
+        let githubLinks = item.githubPage.map( (page) => {
+            return <li><Link to={page.link}>{page.label}</Link></li>
+        });
+
         return (
             <section className="projectItem" key={projectKey}>
                 <img src={item.image} />
@@ -23,7 +27,7 @@ export default function Projects() {
 
                     <ul>
                         <li><Link to={item.livePage}>Se sidan live</Link></li>
-                        <li><Link to={item.githubPage}>Github repo</Link></li>
+                        {githubLinks}
                     </ul>
                 </div>
             </section>
