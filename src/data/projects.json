@@ -14,7 +14,36 @@
                 "link": "https://github.com/CoffeeTails/funkit-sanity-studio"
             }
         ]
-    },{
+    },
+    {
+        "image": "/screenshots/sharedown.png",
+        "title": "ShareDown",
+        "text": "Jag gillar att skriva i markdown men saknade ett enkelt sätt att dela med mig av texterna på ett snyggt och enkelt sätt. Så då skapade jag ShareDown med hjälp av min sambo som gjort backenden, BoltPile. Allt som sparas på shareDown blir borta automagiskt efter en vecka.",
+        "livePage": "https://sharedown.kaffekod.nu/",
+        "githubPage": [
+            {
+                "label": "Github repo - ShareDown",
+                "link": "https://github.com/CoffeeTails/sharedown" 
+            },
+            {
+                "label": "Github repo - BoltPile",
+                "link": "https://github.com/DemmyDemon/boltpile" 
+            }
+        ]
+    },
+    {
+        "image": "/screenshots/8bitansicolors.png",
+        "title": "256-color mode",
+        "text": "En visualisering för hur jag ser 8-bit ANSI färgerna eller 256-color mode.",
+        "livePage": "https://ansi-colors.kaffekod.nu/",
+        "githubPage": [
+            {
+                "label": "Github repo",
+                "link": "https://github.com/CoffeeTails/ansi-colors" 
+            }
+        ]
+    },
+    {
         "image": "/screenshots/chilla.jpg",
         "title": "Chilla",
         "text": "Examensarbete med <a href=\"https://github.com/Hampus83\" class=\"link\">Hampus Egecioglu</a> på <a href=\"https://www.folkuniversitetet.se/vara-skolor/yh-utbildningar/\" class=\"link\">Folkuniversitetet</a>. En sida för avslappning med fokus på andningsövningar och lugnande ljud.",
@@ -26,7 +55,7 @@
             }
         ]
     },{
-        "image": "./screenshots/pluggait.jpg",
+        "image": "/screenshots/pluggait.jpg",
         "title": "Plugga IT",
         "text": "På uppdag av <a href=\"https://www.folkuniversitetet.se/vara-skolor/yh-utbildningar/\"  class=\"link\">Folkuniversitetet</a> och <a href=\"https://www.zocom.com/\" class=\"link\">ZoCom</a> har vi under LIA1 skapat en kampanjsida för att utbildningssökande ska hitta rätt utbildning som passar dem.",
         "livePage": "https://plugga-it.se/",
