@@ -8,6 +8,7 @@ import Index from "./routes/index";
 import Connect from './routes/connect';
 import CV from "./routes/cv";
 import Projects from "./routes/projects";
+import Photography from "./routes/photography";
 import ErrorPage from './error-page';
 import "./index.css";
 import "./fontstyles.css";
@@ -28,16 +29,21 @@ const router = createBrowserRouter([
                 element: <Index /> 
             },
             { 
-                path: "connect", 
-                element: <Connect />  
-            },
-            { 
                 path: "cv", 
                 element: <CV /> 
-            },{ 
-                path: "projects", 
+            },
+            { 
+                path: "projekt", 
                 element: <Projects /> 
             },
+            {
+                path: "foto",
+                element: <Photography />
+            },
+            { 
+                path: "kontakt", 
+                element: <Connect />  
+            }
         ]
     },
 ]);

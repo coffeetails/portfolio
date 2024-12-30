@@ -15,6 +15,7 @@ export default function Root() {
     const cvLink = useRef<HTMLAnchorElement | null>(null);
     const projectsLink = useRef<HTMLAnchorElement | null>(null);
     const connectLink = useRef<HTMLAnchorElement | null>(null);
+    const photographyLink =  useRef<HTMLAnchorElement | null>(null);
 
     const [height, setHeight] = useState<number>(0);
     const [width, setWidth] = useState<number>(0);
@@ -56,24 +57,28 @@ export default function Root() {
 
     });
     
-    if(homeLink.current && cvLink.current && projectsLink.current && connectLink.current) {
+    if(homeLink.current && cvLink.current && projectsLink.current && connectLink.current && photographyLink.current) {
         homeLink.current.className = "";
         cvLink.current.className = "";
         projectsLink.current.className = "";
         connectLink.current.className = "";
+        photographyLink.current.className = "";
         
         switch (location.pathname) {
             case "/":
-                    homeLink.current.className = "currentPage";
+                homeLink.current.className = "currentPage";
                 break;
             case "/cv":
-                    cvLink.current.className = "currentPage";
+                cvLink.current.className = "currentPage";
                 break;
-            case "/projects":
-                    projectsLink.current.className = "currentPage";
+            case "/projekt":
+                projectsLink.current.className = "currentPage";
                 break;
-            case "/connect":
-                    connectLink.current.className = "currentPage";
+            case "/kontakt":
+                connectLink.current.className = "currentPage";
+                break;
+            case "/fotografi":
+                connectLink.current.className = "currentPage";
                 break;
             default:
                 console.log("Where are we now? 👀");
@@ -99,8 +104,9 @@ export default function Root() {
             <ul>
                 <li><Link ref={homeLink} to={`/`}>Hem</Link></li>
                 <li><Link ref={cvLink} to={`/cv`} >CV</Link></li>
-                <li><Link ref={projectsLink} to={`/projects`}>Projekt</Link></li>
-                <li><Link ref={connectLink} to={`/connect`}>Kontakt</Link></li>
+                <li><Link ref={projectsLink} to={`/projekt`}>Projekt</Link></li>
+                {/* <li><Link ref={connectLink} to={`/foto`}>Foto</Link></li> */}
+                <li><Link ref={connectLink} to={`/kontakt`}>Kontakt</Link></li>
             </ul>
         </nav>
         
