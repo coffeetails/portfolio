@@ -37,7 +37,7 @@ const router = createBrowserRouter([
                 element: <Projects /> 
             },
             {
-                path: "foto",
+                path: "foton",
                 element: <Photography />
             },
             { 

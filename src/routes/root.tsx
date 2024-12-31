@@ -77,7 +77,7 @@ export default function Root() {
             case "/kontakt":
                 connectLink.current.className = "currentPage";
                 break;
-            case "/fotografi":
+            case "/foton":
                 connectLink.current.className = "currentPage";
                 break;
             default:
@@ -105,7 +105,7 @@ export default function Root() {
                 <li><Link ref={homeLink} to={`/`}>Hem</Link></li>
                 <li><Link ref={cvLink} to={`/cv`} >CV</Link></li>
                 <li><Link ref={projectsLink} to={`/projekt`}>Projekt</Link></li>
-                {/* <li><Link ref={connectLink} to={`/foto`}>Foto</Link></li> */}
+                {/* <li><Link ref={connectLink} to={`/foton`}>Foton</Link></li> */}
                 <li><Link ref={connectLink} to={`/kontakt`}>Kontakt</Link></li>
             </ul>
         </nav>

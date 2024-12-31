@@ -1,7 +1,19 @@
-import { useState, useEffect, JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal } from "react";
+import { useState, useEffect, JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useRef } from "react";
+import "./photography.css";
 
 export default function Photography() {
     const [photos, setPhotos] = useState([]);
+    const dialogRef = useRef<HTMLDialogElement | null>(null);
+    
+    const openDialog = () => {
+        document.body.style.overflowY = "hidden";
+        if (dialogRef.current) dialogRef.current.showModal();
+    };
+    
+    const closeDialog = () => {
+        document.body.style.overflowY = "scroll";
+        if (dialogRef.current) dialogRef.current.close();
+      };
 
     useEffect(() => {
         document.title = 'Kaffekod - Fotografi';
@@ -19,20 +31,41 @@ export default function Photography() {
         fetchData();
     }, []);
     
-    const displayPhotos = photos.map((photo: { id: Key | null | undefined; server: any; secret: any; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }) => (
-        <figure key={photo.id} style={{marginTop: 24, padding: 8, borderBottom: "1px solid gray"}}>
-            <img src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} />
+    const displayPhotosSmallish = photos.map((photo: { id: Key | null | undefined; server: any; secret: any; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }) => (
+        <figure key={photo.id} className="smallishFigure">
+            <img 
+                src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} 
+                onClick={(e) => console.log(photo.id, e)} 
+            />
             <figcaption>{photo.title}</figcaption>
         </figure>
-    ))
+    ));
+
+    const displayPhotosLarge = photos.map((photo: { id: Key | null | undefined; server: any; secret: any; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }) => (
+        <figure key={photo.id} className="largeFigure">
+            <img src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_b.jpg`} />
+            <figcaption>{photo.title}</figcaption>
+        </figure>
+    ));
+
 
     return (
         <article className="photography">
+            <button id="open" onClick={openDialog}>Open Dialog</button>
             <h1>Foton</h1>
-            <p>På fritiden så brukar jag ibland utforska världen igenom kameralinsen.</p>
+            <p>På min fritid så utforskar jag ibland världen igenom kameralinsen, här är lite av vad jag har fångat.</p>
             <div className="photoWrapper">
-                {displayPhotos}
+                {displayPhotosSmallish}
             </div>
+
+
+        <dialog id="dialog" ref={dialogRef}>
+            <div className="carouselWrapper">
+                {displayPhotosLarge}
+            </div>
+            <button id="close" onClick={closeDialog}> X </button>
+        </dialog>
+
         </article>
     );
 }
