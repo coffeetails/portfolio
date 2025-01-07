@@ -14,6 +14,7 @@ export default function Photography() {
             fetch("https://www.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=45ee5e5758f149d9560aff38950ac9d9&photoset_id=72177720322856733&user_id=61048433@N05&format=json&nojsoncallback=1")
             .then(response => response.json())
             .then(resultGallery => {
+                console.log("resultGallery: ",resultGallery);
                 setSmallPhotos(resultGallery.photoset.photo);
                 return resultGallery.photoset.photo;
             })
@@ -39,12 +40,6 @@ export default function Photography() {
 
     }, []);
     
-    // const openDialog = () => {
-    //     document.body.style.overflowY = "hidden"; // Prevent body from scrolling
-    //     if (dialogRef.current) {
-    //         dialogRef.current.showModal();
-    //     }
-    // };
     function openDialog(index: number) {
         console.log(index);
         console.log(largeImageRefs.current[index]);
@@ -57,6 +52,7 @@ export default function Photography() {
         document.body.style.overflowY = "hidden"; // Prevent body from scrolling
         if (dialogRef.current) {
             dialogRef.current.showModal();
+            //@ts-ignore
             largeImageRefs.current[index].scrollIntoView();
         }
     }
@@ -69,27 +65,39 @@ export default function Photography() {
     };
 
 
-    const displayPhotosSmallish = smallPhotos.map((photo: { id: Key | null | undefined; server: any; secret: any; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }, index) => (
-        <figure key={photo.id} className="smallishFigure">
-            <img 
-                src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} 
-                onClick={() => openDialog(index)}
-            />
-            <figcaption>{photo.title}</figcaption>
-        </figure>
-    ));
-
-    const displayPhotosLarge = largePhotos.map((photo: { id: string | undefined; title: any; dates: any; server: any; secret: any; }, index) => (
-        <div className="largeFigureWrapper">
-            <figure key={photo.id} ref={el => setRef(el, index)} className="largeFigure">
-                <img src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_b.jpg`} />
-                <figcaption>{photo.title._content} - {photo.dates.taken.slice(0, 10)}</figcaption>
+    const displayPhotosSmallish = smallPhotos.map((photo: { id: Key | null | undefined; server: any; secret: any; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }, index) => {
+        // console.log("small photo", photo);
+        return (
+            <figure key={photo.id+"_s"} className="smallishFigure">
+                <img 
+                    src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} 
+                    onClick={() => openDialog(index)}
+                />
+                <figcaption>{photo.title}</figcaption>
             </figure>
-        </div>
-    ));
+        )}
+    );
+
+    const displayPhotosLarge = largePhotos.map((photo: { id: string | undefined; title: any; dates: any; server: any; secret: any; }, index) => {
+        // console.log("large photo", photo);
+        return (
+            // <div className="largeFigureWrapper">
+                <figure key={photo.id+"_l"} ref={el => setRef(el, index)} className="largeFigure">
+                    <span> </span> {/* placeholder for spaceing */}
+                    <img 
+                        src={`https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_b.jpg`} 
+                        //@ts-ignore
+                        onClick={() => largeImageRefs.current[index].scrollIntoView()} 
+                    />
+                    <figcaption>{photo.title._content} - {photo.dates.taken.slice(0, 10)}</figcaption>
+                </figure>
+            // </div>
+        )}
+    );
 
     const setRef = (element: HTMLElement | null, index: number) => {
         if (element) {
+            //@ts-ignore
             largeImageRefs.current[index] = element;
         }
     };
@@ -97,9 +105,8 @@ export default function Photography() {
 
     return (
         <article className="photography">
-            <button id="open" onClick={() => openDialog(0)}>Open Dialog</button>
             <h1>Foton</h1>
-            <p>På min fritid så utforskar jag ibland världen igenom kameralinsen, här är lite av vad jag har fångat.</p>
+            <p>På min fritid så utforskar jag ibland världen igenom kameralinsen, här är lite av vad jag har fångat. Om du vill se mer så finns det på CoffeeTails@flickr</p>
             <div className="photoWrapper">
                 {displayPhotosSmallish}
             </div>
