@@ -27,8 +27,8 @@
 
 .toTopButton {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 5dvh;
+    right: 5dvw;
     cursor: pointer;
     background-color: #c6c6c685;
     text-align: center;
@@ -39,7 +39,7 @@
     height: 2rem;
     transition: 0.15s;
     transform: rotate(-90deg);
-    box-shadow: 0.15rem 0.25rem 0.25rem #0a0a0a;
+    box-shadow: -0.2rem 0.1rem 0.25rem #0a0a0a8c;
 }
 .toTopButton:hover {
     background-color: #38761D;
