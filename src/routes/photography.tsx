@@ -47,6 +47,7 @@ export default function Photography() {
         <article className="photography">
             <h1>Foton</h1>
             <p>På min fritid så utforskar jag ibland världen igenom kameralinsen, här är lite av vad jag har fångat. Om du vill se mer så finns det på <a href="https://www.flickr.com/people/61048433@N05/">Flickr</a>.</p>
+            <button className="toTopButton" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })} >➤</button>
             <div className="photoWrapper">
                 {displayPhotosSmallish}
             </div>
