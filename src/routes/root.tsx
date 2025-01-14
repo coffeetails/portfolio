@@ -57,34 +57,18 @@ export default function Root() {
 
     });
     
-    if(homeLink.current && cvLink.current && projectsLink.current && connectLink.current && photographyLink.current) {
-        homeLink.current.className = "";
-        cvLink.current.className = "";
-        projectsLink.current.className = "";
-        connectLink.current.className = "";
-        photographyLink.current.className = "";
-        
-        switch (location.pathname) {
-            case "/":
-                homeLink.current.className = "currentPage";
-                break;
-            case "/cv":
-                cvLink.current.className = "currentPage";
-                break;
-            case "/projekt":
-                projectsLink.current.className = "currentPage";
-                break;
-            case "/kontakt":
-                connectLink.current.className = "currentPage";
-                break;
-            case "/foton":
-                connectLink.current.className = "currentPage";
-                break;
-            default:
-                console.log("Where are we now? 👀");
-                break;
+    [homeLink, cvLink, projectsLink, connectLink, photographyLink].forEach(elem => {
+        if(elem.current) {
+            console.log(elem.current.pathname, location.pathname, elem.current.pathname == location.pathname);
+            
+            if(elem.current.pathname == location.pathname) {
+                elem.current.className = "currentPage";
+            } else {
+                elem.current.className = "";
+            }
+            
         }
-    }
+    });
 
     return (
         <>
@@ -105,7 +89,7 @@ export default function Root() {
                 <li><Link ref={homeLink} to={`/`}>Hem</Link></li>
                 <li><Link ref={cvLink} to={`/cv`} >CV</Link></li>
                 <li><Link ref={projectsLink} to={`/projekt`}>Projekt</Link></li>
-                <li><Link ref={connectLink} to={`/foton`}>Foton</Link></li>
+                <li><Link ref={photographyLink} to={`/foton`}>Foton</Link></li>
                 <li><Link ref={connectLink} to={`/kontakt`}>Kontakt</Link></li>
             </ul>
         </nav>

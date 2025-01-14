@@ -13,10 +13,6 @@ import ErrorPage from './error-page';
 import "./index.css";
 import "./fontstyles.css";
 
-/* Easter egg ideas:
-- a cat appears on the screen every 10min when no interaction occurs
-- the sunsets starts moving
-*/
 
 const router = createBrowserRouter([
     {

@@ -68,7 +68,7 @@ export default function Connect() {
                 <address className="contact">
                     <a href="mailto:m.bjork95@gmail.com">m.bjork95@gmail.com</a><br />
                     <a href="https://www.linkedin.com/in/monbjo/">Linkedin</a><br />
-                    <a href="https://github.com/MonBjo">Github</a>
+                    <a href="https://github.com/coffeetails">Github</a>
                 </address>
             </section>
                 
