@@ -23,10 +23,10 @@ export default function Root() {
 
     const [height, setHeight] = useState<number>(0);
     const [width, setWidth] = useState<number>(0);
-    const [fps, setFps] = useState<number>(0);
+    // const [fps, setFps] = useState<number>(0);
 
     const location = useLocation();
-    let frames = 0, prevTime = performance.now();
+    // let frames = 0, prevTime = performance.now();
     
     // Set height and with on canvas
     useLayoutEffect(() => {
@@ -45,7 +45,7 @@ export default function Root() {
         
         //@ts-ignore
         const renderer = new THREE.WebGLRenderer({ canvas: canvas.current, alpha: true, antialias: true });
-
+        
         window.addEventListener( "resize", () => {
             // Unsure why, but the state refuses to update
             // inside of useEffect. But fps works fine.
@@ -74,12 +74,39 @@ export default function Root() {
         geometryThree.rotateY(Math.PI / 2);   
 
 
+        const fragmentShader = `
+            precision mediump float;
+
+            varying vec2 vUv;
+
+            uniform vec3 colors[5];  // Up to 5 colors
+            uniform float stops[5];  // Corresponding positions
+
+            void main() {
+                float t = vUv.y; // Linear gradient along y-axis
+
+                vec3 color = colors[0]; // Start with the first color
+
+                for (int i = 0; i < 4; i++) { // Loop through colors
+                    float lower = stops[i];
+                    float upper = stops[i + 1];
+
+                    if (t >= lower && t <= upper) {
+                        float blend = (t - lower) / (upper - lower);
+                        color = mix(colors[i], colors[i + 1], blend);
+                    }
+                }
+
+                gl_FragColor = vec4(color, 1.0);
+            }
+        `;
+
         const materialOne = new THREE.ShaderMaterial({
             vertexShader: `
                 uniform float time;
                 varying vec2 vUv;
                 void main() {
-                    vUv = uv;
+                    vUv = uv * 0.98 + 0.01; // Scale & shift UVs slightly
                     vec3 pos = position;
 
                     // Rotate 90 degrees around the Y-axis
@@ -87,43 +114,22 @@ export default function Root() {
                     pos.x = pos.z;
                     pos.z = -temp;
 
-                    float wave = sin(pos.x * 2.0 + time * 0.03) * 0.1; 
+                    float wave = cos(pos.x * 3.0 + time * 0.02-2.0) * 0.13; 
                     pos.y += wave;
                     gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
                 }
             `,
-            fragmentShader: `
-                varying vec2 vUv;
-                uniform vec3 colors[5];
-
-                void main() {
-                    // Calculate the gradient based on UV coordinates
-                    float steps[4] = float[4](0.25, 0.25, 0.25, 0.25); // 4 steps between 5 colors
-                    int length = 4;
-                    vec3 color = vec3(0.0);
-                    
-                    for (int i = 0; i < length; i++) {
-                        if( vUv.y < (steps[i] * float(i + 1)) ) {
-                            float t = (vUv.y - steps[i]) / steps[i];
-                            color = mix(colors[i], colors[i + 1], t);
-                            break;
-                        }
-                    }
-
-                    gl_FragColor = vec4(color, 1.0);
-                }
-            `,
+            fragmentShader,
             uniforms: {
                 time: { value: 0 },
-                colors: { 
-                    value: [
-                        new THREE.Color(0.2, 0.0, 0.2), // dark green
-                        new THREE.Color(0.0, 0.0, 0.2), // dark green
-                        new THREE.Color(0.2, 0.0, 0.0), // dark green
-                        new THREE.Color(0.0, 0.2, 0.0), // dark green
-                        new THREE.Color(0.1, 0.3, 0.1), // top, bluegreenish
-                    ]   
-                }
+                colors: { value: [
+                    new THREE.Color("rgb(12, 25, 4)"),
+                    new THREE.Color("rgb(35, 126, 110)"),
+                    new THREE.Color("rgb(111, 150, 112)"),
+                    new THREE.Color("rgb(98, 168, 97)"),
+                    new THREE.Color("rgb(193, 219, 196)"), 
+                ]},
+                stops: { value: [0.0, 0.75, 0.85, 0.975, 1.0] }
             },
             side: THREE.DoubleSide,
             wireframe: false,
@@ -134,7 +140,7 @@ export default function Root() {
                 uniform float time;
                 varying vec2 vUv;
                 void main() {
-                    vUv = uv;
+                    vUv = uv * 0.98 + 0.01; // Scale & shift UVs slightly
                     vec3 pos = position;
 
                     // Rotate 90 degrees around the Y-axis
@@ -142,19 +148,22 @@ export default function Root() {
                     pos.x = pos.z;
                     pos.z = -temp;
 
-                    float wave = cos(pos.x * 2.0 + time * 0.08) * 0.15; 
+                    float wave = cos(pos.x * 1.8 + time * 0.04+1.5) * 0.20; 
                     pos.y += wave;
                     gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
                 }
             `,
-            fragmentShader: `
-                varying vec2 vUv;
-                void main() {
-                    gl_FragColor = vec4(0.1, 0.5 + 0.5 * cos(vUv.y * 4.7), 0.1, 0.5); // Gradient color
-                }
-            `,
+            fragmentShader,
             uniforms: {
-                time: { value: 0 }
+                time: { value: 0 },
+                colors: { value: [
+                    new THREE.Color("rgb(12, 25, 4)"),
+                    new THREE.Color("rgb(26, 122, 127)"),
+                    new THREE.Color("rgb(111, 150, 114)"),
+                    new THREE.Color("rgb(124, 193, 119)"),
+                    new THREE.Color("rgb(208, 236, 211)"), 
+                ]},
+                stops: { value: [0.0, 0.65, 0.85, 0.97, 1.00] }
             },
             side: THREE.DoubleSide,
             wireframe: false,
@@ -165,7 +174,7 @@ export default function Root() {
                 uniform float time;
                 varying vec2 vUv;
                 void main() {
-                    vUv = uv;
+                    vUv = uv * 0.98 + 0.01; // Scale & shift UVs slightly
                     vec3 pos = position;
 
                     // Rotate 90 degrees around the Y-axis
@@ -173,19 +182,22 @@ export default function Root() {
                     pos.x = pos.z;
                     pos.z = -temp;
 
-                    float wave = sin(pos.x * 2.0 + time * 0.15) * 0.2; 
+                    float wave = cos(pos.x * 1.5 + time * 0.05-1.6) * 0.26; 
                     pos.y += wave;
                     gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
                 }
             `,
-            fragmentShader: `
-                varying vec2 vUv;
-                void main() {
-                    gl_FragColor = vec4(0.1, 0.5 + 0.5 * cos(vUv.y * 4.7), 0.1, 0.5); // Gradient color
-                }
-            `,
+            fragmentShader,
             uniforms: {
-                time: { value: 0 }
+                time: { value: 0 },
+                colors: { value: [
+                    new THREE.Color("rgb(12, 25, 4)"),
+                    new THREE.Color("rgb(146, 189, 182)"),
+                    new THREE.Color("rgb(150, 197, 170)"),
+                    new THREE.Color("rgb(162, 213, 176)"),
+                    new THREE.Color("rgb(227, 242, 229)"), 
+                ]},
+                stops: { value: [0.0, 0.65, 0.85, 0.965, 1.0] }
             },
             side: THREE.DoubleSide,
             wireframe: false,
@@ -194,13 +206,12 @@ export default function Root() {
         const wavePlaneOne   = new THREE.Mesh(geometryOne, materialOne);
         const wavePlaneTwo   = new THREE.Mesh(geometryTwo, materialTwo);
         const wavePlaneThree = new THREE.Mesh(geometryThree, materialThree);
-        // wavePlaneOne.position.set(0, 0, 6);
-        wavePlaneOne.position.set(0, -0.6, 9);
+        wavePlaneOne.position.set(0, -0.58, 9);
         wavePlaneTwo.position.set(0, -0.5, 8.5);
         wavePlaneThree.position.set(0, -0.35, 8);
-        wavePlaneOne.rotateY(3);
-        wavePlaneTwo.rotateY(3);
-        wavePlaneThree.rotateY(3);
+        wavePlaneOne.rotateY(3.15);
+        wavePlaneTwo.rotateY(3.15);
+        wavePlaneThree.rotateY(3.15);
         scene.add(wavePlaneOne);
         scene.add(wavePlaneTwo);
         scene.add(wavePlaneThree);
@@ -209,15 +220,16 @@ export default function Root() {
 
 
         function animationLoop() {
-            frames ++;
-            const time = performance.now();
-            
-            if ( time >= prevTime + 1000 ) {
+
+            // FPS 
+            // frames ++;
+            // const time = performance.now();
+            // if ( time >= prevTime + 1000 ) {
                 // console.log( "fps", Math.round( ( frames * 1000 ) / ( time - prevTime ) ) );
-                setFps(Math.round( ( frames * 1000 ) / ( time - prevTime ) ));
-                frames = 0;
-                prevTime = time;
-            }
+                // setFps(Math.round( ( frames * 1000 ) / ( time - prevTime ) ));
+                // frames = 0;
+                // prevTime = time;
+            // }
 
             materialOne.uniforms.time.value   = clock.getElapsedTime();
             materialTwo.uniforms.time.value   = clock.getElapsedTime();
@@ -245,7 +257,7 @@ export default function Root() {
         <>
         <header ref={headerElem}>
             <canvas width={width} height={height} ref={canvas} />
-            <p style={{position: "absolute", right: "0.5rem", bottom: "-0.75rem", color: "black", opacity: "0.5", fontSize: "0.75rem"}}>{fps}fps</p>
+            {/* <p style={{position: "absolute", right: "0.5rem", bottom: "-0.75rem", color: "black", opacity: "0.5", fontSize: "0.75rem"}}>{fps}fps</p> */}
 
             <div className="header-text">
                 <h1>Monica Björk</h1>
