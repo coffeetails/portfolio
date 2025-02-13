@@ -1,14 +1,8 @@
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { useLayoutEffect, useState, useRef, useEffect } from "react";
 
-
 import './root.css';
-
 import * as THREE from 'three';
-
-// import WaveOne from './components/waveOne';
-// import WaveTwo from './components/waveTwo';
-// import WaveThree from './components/waveThree';
 
 
 export default function Root() {
