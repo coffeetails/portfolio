@@ -1,4 +1,3 @@
-
 [
     {
       "name": "Minecraft Java Edition",
@@ -15,7 +14,7 @@
       "tags": ["2D", "PVE", "PVP", "Ground manipulation"]
     },
     {
-      "name": "Luanti (previously Minetest)",
+      "name": "Luanti, previously Minetest",
       "url": "https://www.luanti.org/",
       "about": "A voxel-based game engine, similar to Minecraft, with a focus on world-building and exploration.",
       "modding": "Lua",
@@ -62,5 +61,103 @@
       "about": "A vampire survival game with exploration, combat, and building mechanics.",
       "modding": "C#",
       "tags": ["3D", "PVE", "PVP", "Vampires"]
+    },
+    {
+      "name": "Starbound",
+      "url": "https://playstarbound.com/",
+      "about": "A 2D sandbox game with exploration, crafting, and combat across multiple planets.",
+      "modding": "C#",
+      "tags": ["2D", "PVE", "PVP", "Ground manipulation"]
+    },
+    {
+      "name": "Ark",
+      "url": "https://playark.com/",
+      "about": "A survival game set in a prehistoric world filled with dinosaurs and crafting.",
+      "modding": "C++",
+      "tags": ["Prehistoric", "Fantasy", "PVE", "PVP"]
+    },
+    {
+      "name": "Soulmask",
+      "url": "https://mask.qoolandgames.com/",
+      "about": "A survival and combat game set in a dark, fantasy world.",
+      "modding": "Lua",
+      "tags": ["Fantasy", "PVE", "PVP"]
+    },
+    {
+      "name": "ECO",
+      "url": "https://play.eco/",
+      "about": "A sandbox game where players build and manage a society, focusing on environmental sustainability.",
+      "modding": "C#",
+      "tags": ["Simulation", "PVE", "Economy"]
+    },
+    {
+      "name": "The Forest",
+      "url": "https://theforestgame.com/",
+      "about": "A survival horror game where players must survive on an island inhabited by mutants.",
+      "modding": "Unity",
+      "tags": ["3D", "PVE", "Horror"]
+    },
+    {
+      "name": "Icarus",
+      "url": "https://www.icarus.com/",
+      "about": "A cooperative survival game set on an alien planet, with exploration and resource gathering.",
+      "modding": "Unreal Engine",
+      "tags": ["3D", "PVE", "Sci-Fi"]
+    },
+    {
+      "name": "Myth of Empires",
+      "url": "https://www.mythofempires.com/",
+      "about": "A historical MMO focusing on empire-building, combat, and crafting in ancient Asia.",
+      "modding": "Unreal Engine",
+      "tags": ["3D", "Historical", "PVE", "PVP"]
+    },
+    {
+      "name": "Satisfactory",
+      "url": "https://www.satisfactorygame.com/",
+      "about": "A factory-building game set on an alien planet, focused on optimizing production lines and automation.",
+      "modding": "Java",
+      "tags": ["Engineering", "3D", "Factory Building"]
+    },
+    {
+      "name": "Starbase",
+      "url": "https://www.starbasegame.com/",
+      "about": "A space MMO focusing on detailed ship-building and exploration.",
+      "modding": "C#",
+      "tags": ["Engineering", "3D", "Space"]
+    },
+    {
+      "name": "Stationeers",
+      "url": "https://stationeers.com/",
+      "about": "A space station simulation game, where players manage and build within a complex space environment.",
+      "modding": "C#",
+      "tags": ["Engineering", "Space"]
+    },
+    {
+      "name": "Valheim",
+      "url": "https://www.valheimgame.com/",
+      "about": "A survival game set in a procedurally-generated Norse world, focusing on exploration, combat, and building.",
+      "modding": "C#",
+      "tags": ["3D", "PVE", "Viking"]
+    },
+    {
+      "name": "Life is Feudal",
+      "url": "https://lifeisfeudal.com/",
+      "about": "A medieval MMO that emphasizes crafting, building, and survival.",
+      "modding": "C#",
+      "tags": ["Medieval", "PVE", "PVP"]
+    },
+    {
+      "name": "Craftopia",
+      "url": "https://www.craftopia.net/",
+      "about": "A sandbox RPG with a focus on crafting, combat, and exploration.",
+      "modding": "C#",
+      "tags": ["3D", "PVE", "Crafting"]
+    },
+    {
+      "name": "Colony Survival",
+      "url": "https://colony-survival.com/",
+      "about": "A voxel-based survival strategy game where players build and defend a colony.",
+      "modding": "C#",
+      "tags": ["Pirates", "Strategy"]
     }
 ]
