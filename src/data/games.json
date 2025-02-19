@@ -1,0 +1,66 @@
+
+[
+    {
+      "name": "Minecraft Java Edition",
+      "url": "https://www.minecraft.net/",
+      "about": "A sandbox game with infinite worlds, block-building mechanics, and exploration. Popular for mods and customizations.",
+      "modding": "Java",
+      "tags": ["Blocky", "Voxel based", "3D", "PVE", "PVP", "Ground manipulation"]
+    },
+    {
+      "name": "Terraria",
+      "url": "https://terraria.org/",
+      "about": "A 2D sandbox game that focuses on exploration, crafting, and combat.",
+      "modding": "C#",
+      "tags": ["2D", "PVE", "PVP", "Ground manipulation"]
+    },
+    {
+      "name": "Luanti (previously Minetest)",
+      "url": "https://www.luanti.org/",
+      "about": "A voxel-based game engine, similar to Minecraft, with a focus on world-building and exploration.",
+      "modding": "Lua",
+      "tags": ["Voxel based", "3D", "Blocky"]
+    },
+    {
+      "name": "Space Engineers",
+      "url": "https://www.spaceengineersgame.com/home/",
+      "about": "A sandbox game focusing on engineering, space exploration, and survival.",
+      "modding": "C#",
+      "tags": ["3D", "Engineering", "Space"]
+    },
+    {
+      "name": "Vintage Story",
+      "url": "https://www.vintagestory.at/",
+      "about": "A survival sandbox with a deep crafting system and a focus on exploration and progression.",
+      "modding": "C#",
+      "tags": ["Voxel based", "Blocky", "3D", "PVE", "PVP", "Ground manipulation"]
+    },
+    {
+      "name": "Rising World",
+      "url": "https://www.rising-world.net/",
+      "about": "A sandbox game with a realistic world, dynamic terrain, and various crafting options.",
+      "modding": "Java",
+      "tags": ["Voxel based", "3D", "PVE", "PVP", "Ground manipulation"]
+    },
+    {
+      "name": "7 Days to Die",
+      "url": "https://7daystodie.com/",
+      "about": "A zombie survival game with a focus on crafting, building, and exploring.",
+      "modding": "C#",
+      "tags": ["3D", "PVE", "PVP", "Zombies"]
+    },
+    {
+      "name": "Conan Exiles",
+      "url": "https://www.conanexiles.com/",
+      "about": "A survival game set in the world of Conan the Barbarian, featuring building, combat, and exploration.",
+      "modding": "Lua",
+      "tags": ["3D", "PVE", "PVP", "Fantasy"]
+    },
+    {
+      "name": "V Rising",
+      "url": "https://playvrising.com/",
+      "about": "A vampire survival game with exploration, combat, and building mechanics.",
+      "modding": "C#",
+      "tags": ["3D", "PVE", "PVP", "Vampires"]
+    }
+]
