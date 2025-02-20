@@ -22,7 +22,7 @@ export default function Games() {
         return (
             <section className="gameCard" key={game.name+x}>
                 <h3><a href={game.url}>{game.name}</a></h3>
-                <p className="gameCard-price"></p>
+                <p className="gameCard-price">€10</p>
                 <h4>About the game</h4>
                 <p>{game.about}</p>
                 <h4>About the modding</h4>
@@ -38,6 +38,15 @@ export default function Games() {
             <span className="updateDate">This page was last updated 2025-02-20</span>
             <p>Are you also looking for a moddable multiplayer game that you can run from home to be creative with your friends? Me too! So I made a list of games that check all the boxes.</p>
             <p>If you stumbled upon this page, these games are great to play with friends to just chill and hang around it. Chat about everything and nothing while building, exploring, fishing, crafting or whatever else the game might offer.</p>
+
+            <p className="infoText">All games in this list are available for:</p>
+            <ul className="infoList">
+                <li>Multiplayer, at least 10 players</li>
+                <li>Dedicated server at home</li>
+                <li>Creative elements / building</li>
+                <li>Modding</li>
+                <li>Customizable character</li>
+            </ul>
 
             <section className="gamesWrapper">
                 {gamesDataDisplay}

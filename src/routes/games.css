@@ -9,7 +9,23 @@
     color: #d7d7d7;
 }
 
+.infoText {
+    padding: 0.5rem 0;
+}
+.infoList {
+    margin: 0;
+    padding: 0;
+    
+    list-style-type: "✅   ";
+    list-style-position: inside;
+}
+.infoList * {
+    margin: 0;
+    padding: 0;
+}
+
 .gamesWrapper {
+    padding: 3rem 0;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
