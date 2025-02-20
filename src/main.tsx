@@ -9,6 +9,7 @@ import Connect from './routes/connect';
 import CV from "./routes/cv";
 import Projects from "./routes/projects";
 import Photography from "./routes/photography";
+import Games from "./routes/games";
 import ErrorPage from './error-page';
 import "./index.css";
 import "./fontstyles.css";
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: "foton",
                 element: <Photography />
+            },
+            {
+                path: "games",
+                element: <Games />
             },
             { 
                 path: "kontakt", 

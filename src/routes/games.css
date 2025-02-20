@@ -1,0 +1,76 @@
+
+.games {
+
+}
+
+.updateDate {
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #d7d7d7;
+}
+
+.gamesWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+}
+
+.gameCard {
+    flex-grow: 2;
+    min-width: 49%;
+    max-width: 100%;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.gameCard h3 ::after {
+    /* height: 0.5rem; */
+    top: 1.9rem;
+}
+.gameCard h3 ::before {
+    height: 2.4rem;
+}
+.gameCard h3 {
+    flex-grow: 2;
+    padding-right: 0.5rem;
+}
+
+.gameCard h4 {
+    margin: 0;
+    line-height: 1;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+}
+
+.gameCard p {
+    padding: 0.5rem 0;
+    margin: 0;
+}
+
+.gameCard-price {
+    padding: 0 1rem;
+}
+
+.gameCard-tags {
+    padding: 0;
+    width: 100%;
+    
+    list-style-type: "#";
+    list-style-position: inside;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.gameCard-tags * {
+    border: 1px solid gray;
+    padding: 0 0.75rem;
+    border-radius: 0.5rem;
+}
