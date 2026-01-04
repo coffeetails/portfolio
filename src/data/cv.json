@@ -1,83 +1,55 @@
 [
-    {"Utbildningar": [
-        {
-            "title": "Frontendutvecklare",
-            "time": {
-                "start": "2021-10",
-                "end": "2023-06"
+    {
+        "Erfarenheter": [
+            {
+                "title": "Fullstackutvecklare, APL & timanställning",
+                "time": {
+                    "start": "September 2025",
+                    "end": "December 2025"
+                },
+                "location": "Accelor, distans",
+                "description": "<li>Jag har självständigt utvecklat en Dockeriserad  backend i Java med Spring och Maven, för en kundportal i ett växande CMS-projekt. Fokuset var på att designa och implementera hela flödet från inkommande API-call ner till PostgreSQL databasen för hantering av Users, Tenants och Analytics. Vilket skapar en stabil grund för systemets kärnfunktioner som Accelor sedan kan jobba vidare på.</li><li>Jag tog egna initiativ och löste komplexa designutmaningar genom att omstrukturera relationshanteringen mellan Permission, Role och User. Jag gick ifrån en design med helt löskopplade entiteter till en mer direkt relation som bättre följer best practices, vilket förenklade databasdesignen.</li><li>Jag använde också Lombok, MapStruct, H2 för testning och självklart git.</li>"
             },
-            "location": "Folkuniversitetes Yrkeshögskoleutbildning",
-            "description": "Utbildningen har gett mig en stark grund för att jobba med bl.a. Typescript, SASS, React, Node.js, UX/UI i ett agilt arbetssätt."
-        },{
-            "title": "Programmering 1 & 2",
-            "time": {
-                "start": "2018-04",
-                "end": "2018-08"
+            {
+                "title": "Frontendutvecklare, LIA 2",
+                "time": {
+                    "start": "April 2023",
+                    "end": "Juni 2023"
+                },
+                "location": "TechSeed, Arvika",
+                "description": "<li>Jag arbetade med att utforska möjligheterna för en ny systemgenerator åt Thermia. Projektet inleddes med att granska en existerande applikation utan tillgång till källkod. Jag dokumenterade löpande mina observationer i form av en teknisk dagbok, vilket senare blev ett mer strukturerat informationsunderlag för fortsatt utveckling.</li><li>Jag valde att strukturera om den ursprungliga datan för att skapa en mer logisk och återanvändbar grund, och började parallellt utforska en möjlig lösning med &lt;canvas&gt; för en med flexibel visualisering än tidigare. Denna del hann aldrig integreras i prototypen, men gav viktig förståelse för framtida tekniska val.</li><li>Även om jag inte kom så långt i implementationen som jag hoppats, utvecklade jag min förmåga att driva ett tekniskt komplext projekt självständigt, dokumentera insikter och tänka strategiskt kring arkitektur och användarflöden.</li>"
             },
-            "location": "Hermods, distanskurser",
-            "description": "Jag fick här lära mig grunderna i objektorienterad programmering i C#. Det vill säga vanliga variabler, metoder, loopar och villkorssatser. Jag lärde mig också om klasser, arv, polymorphism samt projektformer och enklare filhantering."
-        }
-    ]}, 
-    {"Praktik": [
-        {
-            "title": "Frontendutvecklare, LIA 2",
-            "time": {
-                "start": "2023-04",
-                "end": "2023-06"
+            {
+                "title": "Frontendutvecklare, LIA 1",
+                "time": {
+                    "start": "December 2022",
+                    "end": "Februari 2023"
+                },
+                "location": "ZoCom, distans",
+                "description": "<li>Jag deltog i ett team på fyra utvecklare plus scrum-master som byggde en marknadsföringssida för att attrahera nya studerande till ZoComs utbildningar. Webbplatsen utvecklades i React med TypeScript och SCSS, med Firebase som backend.</li><li>Projektet var vår första kontakt med en faktisk kund – företagets VD – vilket gav värdefull insikt i att tolka krav, anpassa lösningar och samarbeta i en verklig beställarsituation. Den tydliga kommunikationen gav oss bra förutsättningar att fokusera på struktur, ansvarsfördelning och kvalitet i leveransen.</li><li><a href=\"https://plugga-it.se/\" class=\"link\">plugga-it.se</a></li>"
+            }
+        ]
+    },
+    {
+        "Utbildningar": [
+            {
+                "title": "Fullstack Java Webbutvecklare",
+                "time": {
+                    "start": "2025-02",
+                    "end": "2025-12"
+                },
+                "location": "Lexicon, distans",
+                "description": "<li>En kortare fullstackutbildning med fokus på backend med Java och Spring Boot, Hibernate ORM, dependency injection samt databashantering med MySQL. Utbildningen inkluderar även frontend-tekniker som JavaScript och React, samt grundläggande AI.</li><li>Jag får möjligheten att utveckla min förståelse för större system och hur allt hänger ihop – från databas till gränssnitt.</li><li>Grundläggande kunskaper i att skriva tester och är van vid att arbeta med Git och GitHub.</li>"
             },
-            "location": "TechSeed, Arvika",
-            "description": "Byggde en proof of concept för Thermias nya systemgenerator med start i att undersöka den nuvarande utan källkod. Baserat på det och företaget så experimenterade jag lite med canvas och valde sedan techstack innan jag började bygga datastrukturen och själva webbsidan."
-        },{
-            "title": "Frontendutvecklare, LIA 1",
-            "time": {
-                "start": "2022-12",
-                "end": "2023-02"
-            },
-            "location": "ZoCom, distans",
-            "description": "Byggde en webbsida för att locka nya studerande till utbildningarna, skriven i typescript och SCSS. Gjord med React och Firebase som backend. <br/> <a href=\"https://plugga-it.se/\" class=\"link\">plugga-it.se</a>"
-        },{
-            "title": "Apputvecklare",
-            "time": {
-                "start": "2018-09",
-                "end": "2018-09"
-            },
-            "location": "Learning Well, Karlstad",
-            "description": "Jag fick här lära mig grunderna i objektorienterad programmering i C#. Det vill säga vanliga variabler, metoder, loopar och villkorssatser. Jag lärde mig också om klasser, arv, polymorphism samt projektformer och enklare filhantering."
-        }
-    ]},
-    {"Jobb": [
-        {
-            "title": "Parkarbetare",
-            "time": {
-                "start": "2022-06",
-                "end": "2022-08"
-            },
-            "location": "Arvika Kommun, Arvika",
-            "description": "Ordinarie parkarbetare; gräsklippning och skötsel av kommunens grönytor och parker."
-        },{
-            "title": "Säljare / Lagerarbetare",
-            "time": {
-                "start": "2020-12",
-                "end": "2021-07"
-            },
-            "location": "Beijer Byggmaterial, Arvika",
-            "description": "Försäljning och service, med fokus att hjälpa kunder med frågor och inköp. Lagerarbete, truckkörning, lastning och lossning av material från lastbilar samt hjälpa kunder med lastning på kärror."
-        },{
-            "title": "Telefonförsäljare ",
-            "time": {
-                "start": "2020-03",
-                "end": "2020-06"
-            },
-            "location": "PEC Sweden, Karlstad",
-            "description": "Försäljning av olika tidningar till både gamla och nya kunder."
-        },{
-            "title": "Butiksmedarbetare / Städare",
-            "time": {
-                "start": "2017-12",
-                "end": "2019-04"
-            },
-            "location": "Samhall, Arvika",
-            "description": "Hanterade packning av varor för leveranser till storkök och hemleveranser. Ordinarie städarbete av lokaler, förskolor, bibliotek, industrier och stora mataffärer."
-        }
-    ]}
+            {
+                "title": "Frontendutvecklare",
+                "time": {
+                    "start": "Augusti 2021",
+                    "end": "Juni 2023"
+                },
+                "location": "Folkuniversitetes Yrkeshögskoleutbildning",
+                "description": "<li>En tvåårig utbildning som gav mig en bred och praktisk grund som frontendutvecklare. Vi jobbade med allt från HTML, CSS och JavaScript (ES6+) till React och Node.js, ofta i agila projekt med skarpa uppgifter. Vi fick också lära oss sätta upp en Docker container.</li><li>UX/UI låg som en röd tråd genom utbildningen – något som fortfarande påverkar hur jag tänker när jag skapar. Jag har både användaren och nästa utvecklare i åtanke: att skapa tydlig och hållbar kod som andra enkelt kan förstå och vidareutveckla känns lika viktigt som att webbsidan är snygg och användarvänlig.</li><li>Jag var också klassrepresentant och satt med i ledningsgruppen, vilket gav både ansvar och inblick i branschen.</li>"
+            }
+        ]
+    }
 ]
