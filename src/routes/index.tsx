@@ -10,7 +10,7 @@ export default function Index() {
     return (
         <article>
             
-            <h2>Hejsan, Monica här!</h2>
+            <h2>Hejsan, Mika här!</h2>
             <p>Jag är en handarbetande (soon-to-be) fullstackutvecklare och kattägare. Från mig kan du förvänta dig:</p>
             <ul>
                 <li>Mycket ambition</li>

@@ -254,7 +254,7 @@ export default function Root() {
             {/* <p style={{position: "absolute", right: "0.5rem", bottom: "-0.75rem", color: "black", opacity: "0.5", fontSize: "0.75rem"}}>{fps}fps</p> */}
 
             <div className="header-text">
-                <h1>Monica Björk</h1>
+                <h1>Mika Vold</h1>
                 {/* <p>{subtitle}</p> */}
             </div>
             <img src="cv-photo.png" className="cvPhoto" />
